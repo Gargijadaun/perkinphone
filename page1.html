@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+            background-image: url('./newimage/bg2.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        #container {
+            display: grid;
+            grid-template-areas:
+                "topLogo topHeading"
+                "buttons buttons";
+            grid-template-rows: auto 1fr;
+            gap: 20px;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            position: relative; /* Added for absolute positioning */
+        }
+
+        #logoTop {
+            width: 100%;
+            max-width: 28%;
+            height: auto;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 5%;
+        }
+
+       
+       
+
+        #buttonContainer {
+            margin-right: 10%;
+            margin-left: 22%;
+            margin-bottom: -13%; /* Adjust the margin as needed */
+            grid-area: buttons;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* Eight buttons, adjust as needed */
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .imageLink {
+            display: inline-block;
+            overflow: hidden;
+            transition: transform 0.3s;
+            border-top-right-radius: 30px;
+            border-bottom-left-radius: 30px;
+            cursor: pointer;
+            margin-bottom: 52px; /* Adjust the margin as needed */
+            width: 96%; /* Adjust the width as needed */
+        }
+
+        .imageLink img {
+            box-sizing: border-box;
+            width: 100%;
+            height: auto;
+            border: 0;
+            border-top-right-radius: 30px;
+            border-bottom-left-radius: 30px;
+            transition: transform 0.3s;
+        }
+
+        .imageLink:hover, #backButton:hover, #backButton01:hover {
+            transform: scale(1.2);
+        }
+
+        #backButton {
+            position: absolute;
+            top: 29px;
+            right: 40px;
+            cursor: pointer;
+            padding: 26px;
+            background-color: transparent;
+            border: none;
+            overflow: hidden;
+            background-image: url(./newimage/home.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        #backButton01 {
+            position: absolute;
+            top: 29px;
+            left: 28px;
+            cursor: pointer;
+            padding: 26px;
+            background-color: transparent;
+            border: none;
+            overflow: hidden;
+            background-image: url(./newimage/newback.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        @media only screen and (max-width: 768px) {
+           
+            #logoTop {
+                max-width: 80%;
+            }
+
+          
+        #buttonContainer {
+            margin-right: -6%;
+    margin-left: 2%;
+    margin-bottom: -95%;
+    grid-area: buttons;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0%;
+    justify-content: center;
+    align-items: center;
+        }
+
+        .imageLink {
+            display: inline-block;
+            overflow: hidden;
+            transition: transform 0.3s;
+            border-top-right-radius: 30px;
+            border-bottom-left-radius: 30px;
+            cursor: pointer;
+            margin-bottom: 194%; /* Adjust the margin as needed */
+            width: 73%; /* Adjust the width as needed */
+        }
+
+            #backButton {
+            top: 18px;
+    right: 11px;
+    cursor: pointer;
+    padding: 20px
+        }
+        #backButton01 {
+            top: 18px;
+    left: 11px;
+    cursor: pointer;
+    padding: 20px
+        }
+    }
+
+    @media only screen and (max-width: 480px) {
+        #buttonContainer {
+            margin-left: 15%;
+    margin-top: -4%;
+    margin-bottom: -62%;
+    grid-template-columns: repeat(2, 1fr);
+            } 
+            .imageLink {
+                margin-bottom: 23%;
+    width: 49%;
+            }
+
+    }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <img id="logoTop" src="./newimage/logo.png" alt="Top Logo">
+        <button id="backButton01" onclick="goBack()"></button>
+        <button id="backButton" onclick="goToHome('next-page.html')"></button>
+        <div id="buttonContainer">
+            <div class="imageLink" onclick="goToPage('box1.html')">
+                <img id="img01" src="./newimage/2000btn1.png" alt="Image 1">
+            </div>
+            <div class="imageLink" onclick="goToPage('box1.html')">
+                <img id="img02" src="./newimage/2000btn2.png" alt="Image 2">
+            </div>
+            <div class="imageLink" onclick="goToPage('box1.html')">
+                <img id="img03" src="./newimage/2000btn3.png" alt="Image 3">
+            </div>
+            <div class="imageLink" onclick="goToPage('box1.html')">
+                <img id="img04" src="./newimage/2000btn4.png" alt="Image 4">
+            </div>
+            <!-- Add four more image links as needed -->
+            <div class="imageLink" onclick="goToPage('box1.html')">
+                <img id="img05" src="./newimage/4000btn1.png" alt="Image 5">
+            </div>
+            <div class="imageLink" onclick="goToPage('box1.html')">
+                <img id="img06" src="./newimage/4000btn2.png" alt="Image 6">
+            </div>
+            <div class="imageLink" onclick="goToPage('box1.html')">
+                <img id="img07" src="./newimage/4000btn3.png" alt="Image 7">
+            </div>
+            <div class="imageLink" onclick="goToPage('box1.html')">
+                <img id="img08" src="./newimage/4000btn4.png" alt="Image 8">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function goToPage(page) {
+            window.location.href = page;
+        }
+        
+        function goToHome(page) {
+            window.location.href = page;
+        }
+        function goBack() {
+            // Implement the functionality to go back as needed
+            window.history.back();
+        }
+    </script>
+</body>
+</html>

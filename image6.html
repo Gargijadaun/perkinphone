@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gmmco</title>
+    <style>
+      body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('./images/BG.png'); /* Replace with your image URL */
+            background-repeat: no-repeat;
+            background-size: cover; /* Adjust to your preference */
+            display: grid;
+        }
+
+
+header {
+    color: rgb(7, 7, 146);
+    padding: 10px;
+    text-align: center;
+    text-size-adjust: 100%;
+    font-size: 150%;
+}
+
+footer {
+    color: #a79e9e;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    font-size: 170%;
+}
+
+#imageContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.image {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.image img {
+    width: 100%;
+    height: auto;
+}
+
+.image:hover {
+    transform: scale(1.2);
+}
+
+#backButton {
+    position: fixed;
+    top: 30px;
+    left: 10px;
+    cursor: pointer;
+}
+
+#backButton img {
+    width: 50px;
+    height: auto;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 480px) {
+    #imageContainer {
+        grid-template-columns: 1fr;
+    }
+}
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Industrial Engine Range</h1>
+        <div id="backButton" onclick="goBack()">
+            <img src="./images/back.png" alt="Back Button">
+        </div>
+    </header>
+    <!-- width: 200px; -->
+    <div id="imageContainer">
+        <!-- Add more images as needed -->
+        <div class="image" style="top: -6%; left: 22%; width: 50%;">
+            <img src="./images/01.jpg" alt="Image 1">
+        </div>
+        <div class="image" style="top: -6%; left: 22%; width: 50%;">
+            <img src="./images/02.jpg" alt="Image 1">
+        </div>
+        <div class="image" style="top: -6%; left: 22%;width: 50%;">
+            <img src="./images/02.jpg" alt="Image 2">
+        </div>
+        <div class="image" style="top: -6%; left: 22%; width: 50%;">
+            <img src="./images/01.jpg" alt="Image 1">
+        </div>
+        <div class="image" style="top: -6%; left: 22%; width: 50%;">
+            <img src="./images/02.jpg" alt="Image 2">
+        </div>
+        <div class="image" style="top: -6%; left: 22%; width: 50%;">
+            <img src="./images/01.jpg" alt="Image 1">
+        </div> 
+        <div class="image" style="top: -6%; left: 22%; width: 50%;">
+            <img src="./images/02.jpg" alt="Image 2">
+        </div>
+        <div class="image" style="top: -6%; left: 22%; width: 50%;">
+            <img src="./images/01.jpg" alt="Image 1">
+        </div>
+      <div class="image" style="top: -6%; left: 22%; width: 50%;">
+            <img src="./images/02.jpg" alt="Image 2">
+        </div>
+      
+    </div>
+    <footer>
+        <p>Lesser Regulated Countries</p>
+    </footer>
+    <script>
+         function goBack() {
+            window.history.back();
+        }
+        document.addEventListener('DOMContentLoaded', function () {
+            // Get all elements with the class 'image'
+            var images = document.querySelectorAll('.image');
+            // Mapping of image indices to corresponding page URLs
+            var pageUrls = [
+                'image1.html',
+                'image2.html',
+                'image3.html',
+                'image4.html',
+                'image5.html',
+                'image6.html',             
+                'image7.html',
+                'image8.html',
+                'image9.html',     
+            ];
+            // Add click event listener to each image
+            images.forEach(function (image, index) {
+                image.addEventListener('click', function () {
+                    // Redirect to the corresponding page
+                    window.location.href = pageUrls[index];
+                });
+            });
+        });
+    </script>
+</body>
+</html>

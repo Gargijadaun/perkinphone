@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gmmco</title>
+    <style>
+        body {
+            position: relative;
+            background-image: url('./images/BG.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            text-align: center;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        #container {
+            top: 6%;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        #logo {
+            transform: rotate(90deg);
+            position: absolute;
+            top: 10%;
+            left: 35%;
+            width: 80%;
+            height: auto;
+            z-index: 2;
+            animation-name: slideInLeft;
+        }
+
+        #scan {
+            position: absolute;
+            top: 26%;
+            left: 50%;
+            width: 50%;
+            height: auto;
+            z-index: 2;
+            animation-name: slideInRight;
+        }
+
+        #buttonContainer {
+            position: absolute;
+            top: 42%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            z-index: 2;
+        }
+
+        .imageLink {
+            animation-name: slideInRight;
+            display: inline-block;
+            overflow: hidden;
+            transition: transform 0.3s;
+            width: 80%;
+            margin: 0 20px; /* Adjust margin as needed */
+            border-top-right-radius: 30px;
+            border-bottom-left-radius: 30px;
+            cursor: pointer;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                transform: translateY(-100%);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                transform: translateY(100%);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        .imageLink img {
+            box-sizing: border-box;
+            width: 100%;
+            height: auto;
+            border: 0;
+            border-top-right-radius: 30px;
+            border-bottom-left-radius: 30px;
+            transition: transform 0.3s;
+        }
+
+        .imageLink:hover #img01 {
+            content: url('./images/electric_power_B.png');
+        }
+
+        .imageLink:hover #img02 {
+            content: url('./images/Industrial\ power_b.png');
+        }
+
+        .imageLink:hover {
+            transform: scale(1.2);
+        }
+
+        @media (min-width: 768px) {
+            #logo {
+                left: 20%;
+                top: 23%;
+                width: 60%;
+            }
+            #buttonContainer {
+                flex-direction: row;
+                justify-content: center;
+            }
+            .imageLink {
+                margin: 0 20px;
+            }
+            #scan {
+                position: absolute;
+                top: 14%;
+                left: 23%;
+                width: 56%;
+                height: auto;
+                z-index: 2;
+                animation-name: slideInRight;
+            }
+        }
+
+        @media (max-width: 768px) {
+            #logo {
+                top: 5%;
+                max-width: 80%;
+                left: 10%;
+            }
+            #scan {
+                top: 10%;
+                left: 10%;
+                width: 80%;
+            }
+            #buttonContainer {
+                flex-direction: column;
+                align-items: center;
+            }
+            .imageLink {
+                width: 80%;
+                margin: 5% 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <img id="logo" src="./images/logo 1.png" alt="Gmmco Logo">
+        <img id="scan" src="./images/UI_03.png" alt="Gmmco Logo">
+        <div id="buttonContainer">
+            <div class="imageLink" onclick="goToPage('page1.html')">
+                <img id="img01" src="./images/electric_power_A.png" alt="Image 1">
+            </div>
+            <div class="imageLink" onclick="goToPage('page2.html')">
+                <img id="img02" src="./images/Industrial power_A.png" alt="Image 2">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function goToPage(page) {
+            window.location.href = page;
+        }
+    </script>
+</body>
+</html>
