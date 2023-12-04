@@ -44,28 +44,29 @@
         #logoBottom {
             bottom: 5%;
         }
-        #button {
-    width: 100%;
-    max-width: 849px;
-    height: 255px;
-    cursor: pointer;
-    background-color: transparent;
-    border: none;
-    background-image: url('./newimage/homebtn.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
 
-#button:hover {
-    transform: translate(-50%, -50%) scale(1.2);
-}
+        #button {
+            width: 100%;
+            max-width: 849px;
+            height: 255px;
+            cursor: pointer;
+            background-color: transparent;
+            border: none;
+            background-image: url('./newimage/homebtn.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        #button:hover {
+            transform: translate(-50%, -50%) scale(1.2);
+        }
+
         @media only screen and (max-width: 768px) {
-            /* Add styles for smaller screens if needed */
             #logoTop, #logoBottom {
                 max-width: 50%;
             }
@@ -74,15 +75,33 @@
                 width: 90%;
             }
         }
-        
+
+        @media only screen and (max-width: 480px) {
+            #logoTop, #logoBottom {
+                max-width: 70%;
+            }
+
+            #button {
+                width: 90%;
+            }
+        }
+
+        @media only screen and (orientation: landscape) {
+            #logoTop, #logoBottom {
+                max-width: 40%;
+            }
+
+            #button {
+                width: 80%;
+            }
+        }
     </style>
     <title>Gmmco</title>
 </head>
 <body>
     <div id="container">
         <img id="logoTop" src="./newimage/logo.png" alt="Top Logo">
-        <button id="button" onclick="goToNextPage()">
-        </button>
+        <button id="button" onclick="goToNextPage()"></button>
         <img id="logoBottom" src="./newimage/homedowntext.png" alt="Bottom Logo">
     </div>
     <script>
