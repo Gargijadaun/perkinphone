@@ -219,54 +219,186 @@ body {
     /* .imageLink.active {
         content: url('./newimage/Industrial_Engine_Menu_01\ \(1\)hov.png');
     } */
-        @media only screen and (max-width: 768px) {
-            #buttonContainer {
-                margin-top: 14%;
-    margin-right: 3%;
-    margin-left: 3%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-            }
+   
 
-            .imageLink {
-                width: 28%; /* Adjust as needed */
-                margin: 5px; /* Add some margin between buttons */
-            }
+    @media only screen and (max-width: 768px) {
+    body {
+        background-size: auto;
+    }
 
-            #groupButtonsContainer {
-                width: 179%;
-    margin-left: -26%;
-    margin-top: 37%;
-            }
-            .groupButtonContainer {
-                grid-template-rows: 1fr;
-                gap: 10px;
-            }
+    #container {
+        gap: 10px;
+    }
 
-            .groupButtonContainer button {
-                width: 100%;
-            } 
+    #buttonContainer {
+        margin-top: 14%;
+        margin-right: 3%;
+        margin-left: 3%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
 
-            .groupButtonContainer button img {
-                width: 100%;
-                margin-bottom: 10px;
-            }
+    .imageLink {
+        width: 28%;
+        margin: 5px;
+    }
 
+    .groupButtonContainer {
+        margin-top: 10%;
+        margin-left: 5%;
+        gap: 10px;
+        position: relative;
+    }
 
-            }
-            @media only screen and (max-width: 480px) {
-#back01{
-    top: 255px;
-    left: 202px;
+    .groupButtonContainer button {
+        width: 80px;
+        height: 30%;
+    }
 
+    .groupButtonContainer button img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 5px;
+    }
+
+    #back01 {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translate(-50%, -50%);
+    }
+
+    #next01 {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translate(50%, -50%);
+    }
 }
-#next01{
-    top: 658px;
-    right: 195px;
 
+@media only screen and (max-width: 480px) {
+    #back01 {
+        top: 255px;
+        left: 61px;
+    }
+
+    #next01 {
+        top: 255px;
+        right: 61px;
+    }
+
+    #container {
+        gap: 5px;
+    }
+
+    #buttonContainer {
+        margin-top: 14%;
+        margin-right: 3%;
+        margin-left: 3%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .imageLink {
+        width: 45%;
+        margin: 5px;
+    }
+
+    .groupButtonContainer {
+        margin-top: 10%;
+        margin-left: 5%;
+        gap: 5px;
+        position: relative;
+    }
+
+    .groupButtonContainer button {
+        width: calc(33.33% - 10px); /* Adjusted width to show 3 buttons in one line */
+        height: 30%;
+    }
+
+    .groupButtonContainer button img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 5px;
+    }
+
+    #back01 {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translate(-50%, -50%);
+    }
+
+    #next01 {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translate(50%, -50%);
+    }
 }
-}   
+@media only screen and (max-width: 480px) {
+    #back01 {
+        top: 255px;
+        left: 61px;
+    }
+
+    #next01 {
+        top: 255px;
+        right: 61px;
+    }
+
+    #container {
+        gap: 5px;
+    }
+
+    #buttonContainer {
+        margin-top: 14%;
+        margin-right: 3%;
+        margin-left: 3%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .imageLink {
+        width: 45%;
+        margin: 5px;
+    }
+
+    .groupButtonContainer {
+        margin-top: 10%;
+        margin-left: 5%;
+        gap: 5px;
+        position: relative;
+    }
+
+    .groupButtonContainer button {
+        width: 60px;
+        height: 30%;
+    }
+
+    .groupButtonContainer button img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 5px;
+    }
+
+    #back01 {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translate(-50%, -50%);
+    }
+
+    #next01 {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translate(50%, -50%);
+    }
+}
     </style>
 </head>
 

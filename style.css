@@ -54,9 +54,43 @@
     body {
       padding: 20px; /* Add some padding for smaller screens */
     }
-  
+    select {
+        width: calc(100% - 20px);
+      }
     .container {
       padding: 20px; /* Adjust padding for smaller screens */
     }
   }
+  /* Add these styles for the dropdown */
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  /* Style for the label of the dropdown */
+  label {
+    color: white;
+    margin-bottom: 10px;
+    display: block;
+  }
+  
+  /* Style for the dropdown arrow */
+  select::-ms-expand {
+    display: none;
+  }
+  
+  select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  
+  }
+  
+  /* Add this style for the dropdown option */
+  select option {
+    background-color: #003b5b;
+    color: white;
+  }
+  
   
