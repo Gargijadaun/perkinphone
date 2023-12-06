@@ -100,15 +100,17 @@
 
        /* ... (your existing styles) ... */
 
-       @media only screen and (max-width: 768px) {
+       @media only screen and (max-width: 600px) {
     #logoTop, #logoBottom {
-        max-width: 54%;
+        max-width: 80%;
     }
 
     #buttonContainer {
         margin-top: 0%;
+    margin-right: 20px;
+    margin-left: 24px;
     grid-template-columns: repeat(2, 1fr);
-    gap: 79px;
+    gap: 49px;
     overflow-x: auto;
     white-space: nowrap;
     height: 57vh;
@@ -119,7 +121,7 @@
     }
 
     .imageLink img {
-        width: 67%; /* Adjust image width to fill the container */
+        width: 100%; /* Adjust image width to fill the container */
     }
 }
 
