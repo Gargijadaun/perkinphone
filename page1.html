@@ -18,7 +18,7 @@
             justify-content: center;
             height: 100vh;
             overflow: hidden;
-            background-image: url('./newimage/bg2.jpg');
+            background-image: url('./newimage/BG.png');
             background-repeat: no-repeat;
             background-size: cover;
             text-align: center;
@@ -54,7 +54,7 @@
         #buttonContainer {
             margin-right: 10%;
             margin-left: 22%;
-            margin-bottom: -13%; /* Adjust the margin as needed */
+            margin-bottom: 9%; /* Adjust the margin as needed */
             grid-area: buttons;
             display: grid;
             grid-template-columns: repeat(4, 1fr); /* Eight buttons, adjust as needed */
@@ -62,7 +62,17 @@
             justify-content: center;
             align-items: center;
         }
-
+        #buttonContainer01 {
+            margin-right: 10%;
+            margin-left: 22%;
+            margin-bottom: -32%; /* Adjust the margin as needed */
+            grid-area: buttons;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* Eight buttons, adjust as needed */
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+        }
         .imageLink {
             display: inline-block;
             overflow: hidden;
@@ -125,7 +135,7 @@
         #buttonContainer {
             margin-right: -6%;
     margin-left: 2%;
-    margin-bottom: -59%;
+    margin-bottom: 25%;
     grid-area: buttons;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -133,7 +143,17 @@
     justify-content: center;
     align-items: center;
         }
-
+        #buttonContainer01 {
+            margin-right: -6%;
+    margin-left: 2%;
+    margin-bottom: -83%;
+    grid-area: buttons;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0%;
+    justify-content: center;
+    align-items: center;
+        }
         .imageLink {
             display: inline-block;
             overflow: hidden;
@@ -162,8 +182,14 @@
     @media only screen and (max-width: 480px) {
         #buttonContainer {
             margin-left: 15%;
-            margin-top: -47%;
-            margin-bottom: -109%;
+    margin-top: -64%;
+    margin-bottom: 0%;
+    grid-template-columns: repeat(2, 1fr);
+            } 
+            #buttonContainer01 {
+                margin-left: 15%;
+    margin-top: -11%;
+    margin-bottom: -109%;
     grid-template-columns: repeat(2, 1fr);
             } 
             .imageLink {
@@ -191,6 +217,10 @@
             <div class="imageLink" onclick="goToPage('box1.html')">
                 <img id="img04" src="./newimage/2000btn4.png" alt="Image 4">
             </div>
+           
+        </div>
+        <div id="buttonContainer01">
+           
             <!-- Add four more image links as needed -->
             <div class="imageLink" onclick="goToPage('box1.html')">
                 <img id="img05" src="./newimage/4000btn1.png" alt="Image 5">
