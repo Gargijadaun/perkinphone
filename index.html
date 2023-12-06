@@ -1,94 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            overflow: hidden;
-            background-image: url('./newimage/BG.png');
-            background-repeat: no-repeat;
-            background-size: cover;
-            text-align: center;
-            overflow: hidden;
-        }
-
-        #container {
-            position: relative;
-            text-align: center;
-            width: 100vw;
-            height: 100vh;
-        }
-
-        #logoTop, #logoBottom {
-            width: 100%;
-            max-width: 28%;
-            height: auto;
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        #logoTop {
-            top: 5%;
-        }
-
-        #logoBottom {
-            bottom: 5%;
-        }
-        #button {
-    width: 100%;
-    max-width: 849px;
-    height: 255px;
-    cursor: pointer;
-    background-color: transparent;
-    border: none;
-    background-image: url('./newimage/homebtn.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-#button:hover {
-    transform: translate(-50%, -50%) scale(1.2);
-}
-        @media only screen and (max-width: 768px) {
-            /* Add styles for smaller screens if needed */
-            #logoTop, #logoBottom {
-                max-width: 50%;
-            }
-
-            #button {
-                width: 90%;
-            }
-        }
-        
-    </style>
-    <title>Gmmco</title>
+	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="container">
-        <img id="logoTop" src="./newimage/logo.png" alt="Top Logo">
-        <button id="button" onclick="goToNextPage()">
-        </button>
-        <img id="logoBottom" src="./newimage/homedowntext.png" alt="Bottom Logo">
-    </div>
-    <script>
-        function goToNextPage() {
-            window.location.href = 'next-page.html';
-        }
-    </script>
+	<div class="container">
+		<form method="post" action="" name="contact-form">
+			<h4>Contact Us</h4>
+			<input type="text" name="your-name" placeholder="Name">
+			<input type="text" name="your-number" placeholder="Number">
+			<input type="email" name="your-email" placeholder="Email">
+
+			<!-- Dropdown for choosing project -->
+			<label for="project">Choose a Project:</label>
+			<select name="project" id="project">
+				<option value="project1">Product 1</option>
+				<option value="project2">Product 2</option>
+				<option value="project3">Product 3</option>
+				<option value="project4">Product 4</option>
+			</select>
+
+			<textarea name="message" rows="7" placeholder="Your Message"></textarea>
+			<input type="submit" value="Submit" id="submit">
+		</form>
+	</div>
+
+	<script src="./script.js"></script>
 </body>
 </html>
