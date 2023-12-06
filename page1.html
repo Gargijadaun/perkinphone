@@ -45,11 +45,26 @@
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
-            top: 5%;
+            top: 3%;
         }
 
-       
-       
+        #top {
+            width: 100%;
+    max-width: 23%;
+    height: auto;
+    position: absolute;
+    left: 0%;
+    top: 18%;
+        }
+
+        #bottom {
+            width: 100%;
+    max-width: 23%;
+    height: auto;
+    position: absolute;
+    left: 0%;
+    top: 55%;
+        }
 
         #buttonContainer {
             margin-right: 10%;
@@ -126,7 +141,24 @@
         }
 
         @media only screen and (max-width: 768px) {
-           
+            #top {
+            width: 100%;
+    max-width: 23%;
+    height: auto;
+    position: absolute;
+    left: 0%;
+    top: 18%;
+        }
+
+        #bottom {
+            width: 100%;
+    max-width: 23%;
+    height: auto;
+    position: absolute;
+    left: 0%;
+    top: 55%;
+        }
+
             #logoTop {
                 max-width: 53%;
             }
@@ -180,6 +212,24 @@
     }
 
     @media only screen and (max-width: 480px) {
+        #top {
+            width: 100%;
+    max-width: 69%;
+    height: auto;
+    position: absolute;
+    left: 0%;
+    top: 12%;
+        }
+
+        #bottom {
+            width: 100%;
+    max-width: 69%;
+    height: auto;
+    position: absolute;
+    left: 0%;
+    top: 50%;
+        }
+
         #buttonContainer {
             margin-left: 14%;
     margin-top: -64%;
@@ -204,7 +254,11 @@
         <img id="logoTop" src="./newimage/logo.png" alt="Top Logo">
         <button id="backButton01" onclick="goBack()"></button>
         <button id="backButton" onclick="goToHome('next-page.html')"></button>
+       
+
         <div id="buttonContainer">
+            <img id="top" src="./newimage/2000b.png" alt="Top Logo">
+          
             <div class="imageLink" onclick="goToPage('box1.html')">
                 <img id="img01" src="./newimage/2000btn1.png" alt="Image 1">
             </div>
@@ -220,7 +274,7 @@
            
         </div>
         <div id="buttonContainer01">
-           
+            <img id="bottom" src="./newimage/4000b.png" alt="Top Logo">
             <!-- Add four more image links as needed -->
             <div class="imageLink" onclick="goToPage('box1.html')">
                 <img id="img05" src="./newimage/4000btn1.png" alt="Image 5">
