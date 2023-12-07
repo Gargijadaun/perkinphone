@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+            background-image: url('./newimage/BG.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            text-align: center;
+            overflow: hidden;
+        }
+
+
+        #container {
+            display: grid;
+            grid-template-areas:
+                "topLogo topHeading"
+                "buttons buttons"
+            ;
+            /* Added images area */
+            grid-template-rows: auto 1fr auto;
+            /* Adjusted for images area */
+            gap: 20px;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            position: relative;
+            /* Added for absolute positioning */
+        }
+
+
+
+
+        #buttonContainer {
+            margin-right: 10%;
+            margin-left: 11%;
+            margin-bottom: -7%;
+            grid-area: buttons;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                transform: translateX(-100%);
+            }
+
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                transform: translateX(100%);
+            }
+
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        .imageLink {
+            display: inline-block;
+            overflow: hidden;
+            transition: transform 0.3s, opacity 0.3s;
+            border-top-right-radius: 30px;
+            border-bottom-left-radius: 30px;
+            cursor: pointer;
+            margin-bottom: 117px;
+            width: 92%;
+            animation: slideUp 1s ease-in-out;
+            /* Added animation property */
+            opacity: 1;
+            /* Start with opacity 0 */
+        }
+
+        .imageLink img {
+            box-sizing: border-box;
+            width: 100%;
+            height: auto;
+            border: 0;
+            border-top-right-radius: 30px;
+            border-bottom-left-radius: 30px;
+            transition: transform 0.3s;
+        }
+
+        @keyframes slideUp {
+            0% {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+
+        #backButton:hover,
+        #backButton01:hover {
+            transform: scale(1.2);
+        }
+
+        #backButton {
+            animation-name: slideInLeft;
+            position: absolute;
+            top: 29px;
+            right: 40px;
+            cursor: pointer;
+            padding: 26px;
+            background-color: transparent;
+            border: none;
+            overflow: hidden;
+            background-image: url(./newimage/home.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        #backButton01 {
+            animation-name: slideInLeft;
+            position: absolute;
+            top: 29px;
+            left: 28px;
+            cursor: pointer;
+            padding: 26px;
+            background-color: transparent;
+            border: none;
+            overflow: hidden;
+            background-image: url(./newimage/newback.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+
+        @media only screen and (max-width: 768px) {
+
+
+
+            #buttonContainer {
+                margin-right: -6%;
+                margin-left: 13%;
+                margin-top: 4%;
+                grid-area: buttons;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0%;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .imageLink {
+                display: inline-block;
+                overflow: hidden;
+                transition: transform 0.3s;
+                border-top-right-radius: 30px;
+                border-bottom-left-radius: 30px;
+                cursor: pointer;
+                margin-bottom: 18%;
+                width: 61%;
+            }
+
+            #backButton {
+                top: 18px;
+                right: 11px;
+                cursor: pointer;
+                padding: 20px
+            }
+
+            #backButton01 {
+                top: 18px;
+                left: 11px;
+                cursor: pointer;
+                padding: 20px
+            }
+        }
+
+        @media only screen and (max-width: 480px) {
+            #buttonContainer {
+                margin-left: 4%;
+                margin-top: -68%;
+                margin-bottom: -62%;
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .imageLink {
+                margin-bottom: 23%;
+                width: 79%;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+
+        <button id="backButton01" onclick="goBack()"></button>
+        <button id="backButton" onclick="goToHome('next-page.html')"></button>
+        <div id="buttonContainer">
+            <div class="imageLink">
+                <img id="img01" src="./newimage/partsimage/01_content.png" alt="Image 1">
+            </div>
+            <div class="imageLink">
+                <img id="img02" src="./newimage/partsimage/02_content.png" alt="Image 2">
+            </div>
+            <div class="imageLink">
+                <img id="img03" src="./newimage/partsimage/03_content.png" alt="Image 3">
+            </div>
+            <div class="imageLink">
+                <img id="img04" src="./newimage/partsimage/04_content.png" alt="Image 4">
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        function goToHome(page) {
+            window.location.href = page;
+        }
+        function goBack() {
+            // Implement the functionality to go back as needed
+            window.history.back();
+        }
+    </script>
+</body>
+
+</html>
