@@ -28,22 +28,22 @@
             background-size: cover; */
         }
          .button.clicked #img01 {
-            content: url('./newimage/frame3/T4hov.png');   
+            content: url('./newimage/industrialengine/menu1/second/T1hov.png');     
         }
         .button.clicked #img02 {
-            content: url('./newimage/frame3/T5hov.png');   
+            content: url('./newimage/industrialengine/menu1/second/T2hov.png');   
         }
         .button.clicked #img03 {
-            content: url('./newimage/frame3/T6hov.png');   
+            content: url('./newimage/industrialengine/menu1/second/T3hov.png');  
         }
         .button.clicked #img04 {
-            content: url('./newimage/frame3/T7hov.png');   
+            content: url('./newimage/industrialengine/menu1/second/T4hov.png'); 
         }
         .button.clicked #img05 {
-            content: url('./newimage/frame3/T8hov.png');   
+            content: url('./newimage/industrialengine/menu1/second/T5hov.png');   
         }
         .button.clicked #img06 {
-            content: url('./newimage/frame3/T9hov.png');   
+            content: url('./newimage/industrialengine/menu1/second/T6hov.png');   
         }
         #video {
             position: relative;
@@ -68,22 +68,22 @@
             padding: 0;
         }
         #img01:hover {
-            content: url('./newimage/frame3/T4hov.png');   
+            content: url('./newimage/industrialengine/menu1/second/T1hov.png');   
         }
         #img02:hover  {
-            content: url('./newimage/frame3/T5hov.png');   
+            content: url('./newimage/industrialengine/menu1/second/T2hov.png');   
         }
       #img03:hover {
-            content: url('./newimage/frame3/T6hov.png');   
+            content: url('./newimage/industrialengine/menu1/second/T3hov.png');   
         }
         #img04:hover {
-            content: url('./newimage/frame3/T7hov.png');   
+            content: url('./newimage/industrialengine/menu1/second/T4hov.png');   
         }
         #img05:hover  {
-            content: url('./newimage/frame3/T8hov.png');   
+            content: url('./newimage/industrialengine/menu1/second/T5hov.png');   
         }
       #img06:hover {
-            content: url('./newimage/frame3/T9hov.png');   
+            content: url('./newimage/industrialengine/menu1/second/T6hov.png');   
         }
         .button img {
             width: 100%;
@@ -371,9 +371,15 @@ margin-bottom: 4%;
     margin-top: 0;
 }
 #buttonContainer {
-    bottom: 2%;
-    left: 24%;
+        left: 24%;
+        bottom: 51%;
         }
+        .button-row {
+    width: 78%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: -54px;
+}
     }
     
    
@@ -385,17 +391,17 @@ margin-bottom: 4%;
         <div class="backButton01" onclick="goBack()">
             <img src="./newimage/newback.png" alt="Back Button">
         </div>
-        <div class="backButton"  onclick="goToHome('next-page.html')">
+        <div class="backButton"  onclick="goToHome('index.html')">
             <img src="./newimage/home.png" alt="Back Button">
         </div>
        
         <div class="image">
-            <img src="./newimage/frame3/Left_image04.png" alt="Left Image">
+            <img src="./newimage/industrialengine/menu1/second/Left_image03.png" alt="Left Image">
             <div class="image-text">Some Text Over Image</div>
         </div>
 
         <div class="image1">
-            <img src="./newimage/frame3/content04.png" alt="Right Image" id="first">
+            <img src="./newimage/industrialengine/menu1/second/content03.png" alt="Right Image" id="first">
 <!--             
             <img src="./images/headin.png" alt="Image 2" id="headin">
             <img src="./images/key.png" alt="Image 2" id="child"> -->
@@ -403,26 +409,26 @@ margin-bottom: 4%;
         </div>
         <div id="buttonContainer">
             <div class="button-row">
-                <button class="button button1" onclick="changeImage('./newimage/frame3/content04.png', this)">
-                    <img class="0ne" id="img01" src="./newimage/frame3/T4hov.png" alt="Button 3 Image">
+                <button class="button button1" onclick="changeImage('./newimage/industrialengine/menu1/second/content03.png', this)">
+                    <img class="0ne" id="img01" src="./newimage/industrialengine/menu1/second/T1hov.png" alt="Button 3 Image">
                 </button>
-                <button class="button button2" onclick="changeImage('./newimage/frame3/content04_1.png', this)">
-                    <img class="0ne" id="img02" src="./newimage/frame3/T5.png" alt="Button 4 Image">
+                <button class="button button2" onclick="changeImage('./newimage/industrialengine/menu1/second/content03_1.png', this)">
+                    <img class="0ne" id="img02" src="./newimage/industrialengine/menu1/second/T2.png" alt="Button 4 Image">
                 </button>
-                <button class="button button3" onclick="changeImage('./newimage/frame3/content04_2.png', this)">
-                    <img class="0ne" id="img03" src="./newimage/frame3/T6.png" alt="Button 5 Image">
+                <button class="button button3" onclick="changeImage('./newimage/industrialengine/menu1/second/content03_2.png', this)">
+                    <img class="0ne" id="img03" src="./newimage/industrialengine/menu1/second/T3.png" alt="Button 5 Image">
                 </button>
-                <button class="button button4" onclick="changeImage('./newimage/frame3/content04_3.png', this)">
-                    <img class="0ne"  id="img04" src="./newimage/frame3/T7.png" alt="Button 6 Image">
+                <button class="button button4" onclick="changeImage('./newimage/industrialengine/menu1/second/content03_3.png', this)">
+                    <img class="0ne"  id="img04" src="./newimage/industrialengine/menu1/second/T4.png" alt="Button 6 Image">
                 </button>
             </div>
            <!-- Corrected onclick attribute by passing 'this' (the clicked button) as an argument -->
            <div class="button-row">
-            <button class="button button5" onclick="changeImage('./newimage/frame3/content04_4.png', this)">
-                <img id="img05" src="./newimage/frame3/T8.png" alt="Button 1 Image">
+            <button class="button button5" onclick="changeImage('./newimage/industrialengine/menu1/second/content03_4.png', this)">
+                <img id="img05" src="./newimage/industrialengine/menu1/second/T5.png" alt="Button 1 Image">
             </button>
-            <button class="button button6" onclick="changeImage('./newimage/frame3/content04_5.png', this)">
-                <img id="img06" src="./newimage/frame3/T9.png" alt="Button 2 Image">
+            <button class="button button6" onclick="changeImage('./newimage/industrialengine/menu1/second/content03_5.png', this)">
+                <img id="img06" src="./newimage/industrialengine/menu1/second/T6.png" alt="Button 2 Image">
             </button>
         </div>
         <!-- 4 buttons in the second row -->
@@ -438,21 +444,21 @@ margin-bottom: 4%;
 <script>
     // Define arrays for original and hover images
     var originalImages = [
-        './newimage/frame3/T4.png',
-        './newimage/frame3/T5.png',
-        './newimage/frame3/T6.png',
-        './newimage/frame3/T7.png',
-        './newimage/frame3/T8.png',
-        './newimage/frame3/T9.png'
+        './newimage/industrialengine/menu1/second/T1.png',
+        './newimage/industrialengine/menu1/second/T2.png',
+        './newimage/industrialengine/menu1/second/T3.png',
+        './newimage/industrialengine/menu1/second/T4.png',
+        './newimage/industrialengine/menu1/second/T5.png',
+        './newimage/industrialengine/menu1/second/T6.png'
     ];
 
     var hoverImages = [
-    '/newimage/frame3/T4hov.png',
-        './newimage/frame3/T5hov.png',
-        './newimage/frame3/T6hov.png',
-        './newimage/frame3/T7hov.png',
-        './newimage/frame3/T8hov.png',
-        './newimage/frame3/T9hov.png'
+    './newimage/industrialengine/menu1/second/T1hov.png',
+        './newimage/industrialengine/menu1/second/T2hov.png',
+        './newimage/industrialengine/menu1/second/T3hov.png',
+        './newimage/industrialengine/menu1/second/T4hov.png',
+        './newimage/industrialengine/menu1/second/T5hov.png',
+        './newimage/industrialengine/menu1/second/T6hov.png'
     ];
 
     function changeText(newText) {
@@ -489,6 +495,19 @@ margin-bottom: 4%;
         // Add 'clicked' class to the clicked button
         button.classList.add('clicked');
     }
+
+    function autoRedirect() {
+        // Set the timeout duration in milliseconds (e.g., 5000 for 5 seconds)
+        const timeoutDuration = 180000;
+
+        setTimeout(() => {
+            // Specify the default page to redirect to
+            goToPage('index.html');
+        }, timeoutDuration);
+    }
+
+    // Call the autoRedirect function when the page loads
+    window.onload = autoRedirect;
 </script>
 
 

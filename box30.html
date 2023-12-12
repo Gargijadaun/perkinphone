@@ -222,7 +222,6 @@
         </div>
     </div>
 
-
     <script>
      
         function goBack() {
@@ -232,7 +231,18 @@
         function goToHome(page) {
             window.location.href = page;
         }
+        function autoRedirect() {
+        // Set the timeout duration in milliseconds (e.g., 5000 for 5 seconds)
+        const timeoutDuration = 180000;
 
+        setTimeout(() => {
+            // Specify the default page to redirect to
+            goToPage('index.html');
+        }, timeoutDuration);
+    }
+
+    // Call the autoRedirect function when the page loads
+    window.onload = autoRedirect;
       
     </script>
 </body>

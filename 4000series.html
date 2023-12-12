@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+            background-image: url('./newimage/mainmenu/4000bg.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            text-align: center;
+            overflow: hidden;
+        }
+        @keyframes buttonAnimation {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+        #container {
+            display: grid;
+            grid-template-areas:
+                "topLogo"
+                "buttons"
+                "bottomLogo";
+            grid-template-rows: auto 1fr auto;
+            gap: 20px;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+        }
+        .backButton {
+            width: 2.8%;
+            position: fixed;
+            top: 21px;
+            right: 35px;
+            animation-name: slideInRight;
+        }
+
+        .backButton img {
+            width: 100%;
+            height: auto;
+            cursor: pointer;
+        }
+        .backButton01 {
+            width: 2.8%;
+            position: fixed;
+            top: 21px;
+            left: 35px;
+            animation-name: slideInLeft;
+        }
+
+        .backButton01 img {
+            width: 100%;
+            height: auto;
+            cursor: pointer;
+        }
+        #logoTop,
+        #logoBottom {
+            width: 100%;
+            max-width: 28%;
+            height: auto;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        #logoTop {
+            top: 5%;
+        }
+
+        #logoBottom {
+            bottom: 5%;
+        }
+
+        #buttonContainer {
+            margin-bottom: 10%;
+            grid-area: buttons;
+            margin-right: 200px;
+            margin-left: 200px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .imageLink {
+            display: inline-block;
+            overflow: hidden;
+            transition: transform 0.3s;
+            border-top-right-radius: 30px;
+            border-bottom-left-radius: 30px;
+            cursor: pointer;
+            animation: buttonAnimation 1.5s infinite;
+        }
+
+        .imageLink img {
+            box-sizing: border-box;
+            width: 54%;
+            height: auto;
+            border: 0;
+            border-top-right-radius: 30px;
+            border-bottom-left-radius: 30px;
+            transition: transform 0.3s;
+        }
+
+        .imageLink:hover {
+            transform: scale(1.2);
+        }
+
+       
+        /* ... (your existing styles) ... */
+
+        @media only screen and (max-width: 600px) {
+            .backButton01 {
+    width: 7.8%;
+    position: fixed;
+    top: 21px;
+    left: 3px;
+    padding: 17px;
+   
+}
+.backButton {
+    width: 7.8%;
+    position: fixed;
+    top: 21px;
+    right: 3px;
+    padding: 17px;
+   
+}
+#logoTop,
+            #logoBottom {
+                max-width: 63%;
+            }
+            #logoTop {
+    width: 100%;
+    max-width: 65%;
+    height: auto;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 3%;
+}
+            #logoTop,
+            #logoBottom {
+                max-width: 80%;
+            }
+
+            #buttonContainer {
+                margin-top: 0%;
+                margin-right: 20px;
+                margin-left: 24px;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 49px;
+                overflow-x: auto;
+                white-space: nowrap;
+                height: 57vh;
+            }
+
+            .imageLink {
+                margin-right: 0;
+                /* Remove spacing between images */
+            }
+
+            .imageLink img {
+                width: 100%;
+                /* Adjust image width to fill the container */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div class="backButton01" onclick="goBack()">
+            <img src="./newimage/newback.png" alt="Back Button">
+        </div>
+        <div class="backButton"  onclick="goToHome('index.html')">
+            <img src="./newimage/home.png" alt="Back Button">
+        </div>
+        <img id="logoTop" src="./newimage/welcomelogo.png" alt="Top Logo">
+        <div id="buttonContainer">
+            <div class="imageLink" onclick="goToPage('4000menu1.html')">
+                <img id="img01" src="./newimage/400series/Menu_01.png" alt="Image 1">
+            </div>
+            <div class="imageLink" onclick="goToPage('4000menu2.html')">
+                <img id="img02" src="./newimage/400series/Menu_02.png" alt="Image 2">
+            </div>
+            <!-- Add two more image links as needed -->
+            <div class="imageLink" onclick="goToPage('4000menu3.html')">
+                <img id="img03" src="./newimage/400series/Menu_03.png" alt="Image 3">
+            </div>
+            <div class="imageLink" onclick="goToPage('4000menu4.html')">
+                <img id="img04" src="./newimage/400series/Menu_04.png" alt="Image 4">
+            </div>
+        </div>
+        <!-- <img id="logoBottom" src="./newimage/homedowntext.png" alt="Bottom Logo"> -->
+    </div>
+
+    <script>
+        function goToPage(page) {
+            window.location.href = page;
+        }
+        function goBack() {
+         window.history.back();
+     }
+
+     function goToHome(page) {
+         window.location.href = page;
+     }
+     function autoRedirect() {
+        // Set the timeout duration in milliseconds (e.g., 5000 for 5 seconds)
+        const timeoutDuration = 180000;
+
+        setTimeout(() => {
+            // Specify the default page to redirect to
+            goToPage('index.html');
+        }, timeoutDuration);
+    }
+
+    // Call the autoRedirect function when the page loads
+    window.onload = autoRedirect;
+    </script>
+</body>
+
+</html>

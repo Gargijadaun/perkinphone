@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-image: url('./newimage/BG.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            text-align: center;
+        }
+
+        #container {
+            display: grid;
+            grid-template-areas:
+                "topLogo topHeading"
+                "buttons buttons"
+                "slider slider"
+                /* Adjusted grid areas for slider */
+                "groupButtonsContainer groupButtonsContainer";
+            /* Added a new row for group buttons */
+            grid-template-rows: auto 1fr auto auto;
+            /* Adjusted grid rows */
+            gap: 20px;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            position: relative;
+            /* Added for absolute positioning */
+        }
+
+        #logoTop {
+            width: 100%;
+            max-width: 28%;
+            height: auto;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 5%;
+        }
+
+        .imageLink:hover,
+        #backButton:hover,
+        #backButton01:hover {
+            transform: scale(1.2);
+        }
+
+        .groupButtonContainer button:hover {
+            transform: scale(1.2);
+        }
+
+        #backButton {
+            position: absolute;
+            top: 29px;
+            left: 28px;
+            cursor: pointer;
+            padding: 26px;
+            background-color: transparent;
+            border: none;
+            overflow: hidden;
+            background-image: url(./newimage/newback.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        #back01 {
+            display: none;
+            position: absolute;
+            top: 357px;
+            left: 122px;
+            cursor: pointer;
+            padding: 26px;
+            background-color: transparent;
+            border: none;
+            overflow: hidden;
+            background-image: url(./newimage/DirectionLeft.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            animation: slideFromTop 0.5s ease-in-out;
+        }
+
+        #next01 {
+            display: none;
+            position: absolute;
+            top: 357px;
+            right: 122px;
+            cursor: pointer;
+            padding: 26px;
+            background-color: transparent;
+            border: none;
+            overflow: hidden;
+            background-image: url(./newimage/DirectionRight.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            animation: slideFromTop 0.5s ease-in-out;
+        }
+
+        @keyframes slideFromBottom {
+            from {
+                transform: translateY(100%);
+            }
+
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideFromTop {
+            from {
+                transform: translateY(-100%);
+            }
+
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        #backButton01 {
+            position: absolute;
+            top: 29px;
+            right: 28px;
+            cursor: pointer;
+            padding: 26px;
+            background-color: transparent;
+            border: none;
+            overflow: hidden;
+            background-image: url(./newimage/home.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        #buttonContainer {
+            margin-right: -27%;
+            margin-left: -27%;
+            margin-bottom: -1%;
+            grid-area: buttons;
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 0px;
+            justify-content: center;
+            align-items: center;
+            animation: slideFromBottom 0.5s ease-in-out;
+        }
+
+        .imageLink {
+            display: inline-block;
+            overflow: hidden;
+            transition: transform 0.3s;
+            cursor: pointer;
+            width: 195px;
+            /* Adjust the width as needed for smaller buttons */
+        }
+
+        .button.clicked #img01 {
+            content: url('./newimage/industrialengine/menu2/Industrial_Engine_Menu_01\ hov.png');
+        }
+
+        .button.clicked #img02 {
+            content: url('./newimage/industrialengine/menu2/Industrial_Engine_Menu_02hov.png');
+        }
+
+        .button.clicked #img03 {
+            content: url('./newimage/industrialengine/menu2/Industrial_Engine_Menu_03hov.png');
+        }
+
+        .button.clicked #img04 {
+            content: url('./newimage/industrialengine/menu2/Industrial_Engine_Menu_04hov.png');
+        }
+
+        .button.clicked #img05 {
+            content: url('./newimage/industrialengine/menu2/Industrial_Engine_Menu_05hov.png');
+        }
+
+        .button.clicked #img06 {
+            content: url('./newimage/industrialengine/menu2/Industrial_Engine_Menu_06hov.png');
+        }
+
+        .button.clicked #img07 {
+            content: url('./newimage/industrialengine/menu2/Industrial_Engine_Menu_07hov.png');
+        }
+
+        #img01:hover {
+            content: url('./newimage/industrialengine/menu2/Industrial_Engine_Menu_01\ hov.png');
+        }
+
+        #img02:hover {
+            content: url('./newimage/industrialengine/menu2/Industrial_Engine_Menu_02hov.png');
+        }
+
+        #img03:hover {
+            content: url('./newimage/industrialengine/menu2/Industrial_Engine_Menu_03hov.png');
+        }
+
+        #img04:hover {
+            content: url('./newimage/industrialengine/menu2/Industrial_Engine_Menu_04hov.png');
+        }
+
+        #img05:hover {
+            content: url('./newimage/industrialengine/menu2/Industrial_Engine_Menu_05hov.png');
+        }
+
+        #img06:hover {
+            content: url('./newimage/industrialengine/menu2/Industrial_Engine_Menu_06hov.png');
+        }
+
+        #img07:hover {
+            content: url('./newimage/industrialengine/menu2/Industrial_Engine_Menu_07hov.png');
+        }
+
+
+        /* .imageLink:hover {
+            content: url('./newimage/Industrial_Engine_Menu_01\ \(1\)hov.png');
+        } */
+        /* .imageLink.clicked img {
+            content: url('./newimage/Industrial_Engine_Menu_01\ \(1\)hov.png');
+        } */
+        .imageLink img {
+            box-sizing: border-box;
+            width: 100%;
+            height: auto;
+            border: 0;
+            transition: transform 0.3s;
+        }
+
+        .groupButtonContainer {
+            margin-top: 18%;
+            margin-left: 23%;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            /* Display four buttons in one row */
+            gap: 200px;
+            animation: slideFromTop 0.5s ease-in-out;
+        }
+
+        /* .groupButtonsContainer {
+            margin-bottom: 14%;
+        } */
+
+        .groupButtonContainer button {
+            /* Add styling for your buttons as needed */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: none;
+            width: 100px;
+            /* Adjust the width as needed for smaller buttons */
+            height: 46%;
+            background-color: transparent;
+        }
+
+        .groupButtonContainer button img {
+            width: 220px;
+            /* Adjust the width of the image */
+            height: auto;
+            /* Add margin between image and text */
+        }
+
+
+        .center-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* .imageLink.active {
+        content: url('./newimage/Industrial_Engine_Menu_01\ \(1\)hov.png');
+    } */
+        @media only screen and (max-width: 768px) {
+            #buttonContainer {
+                margin-top: 14%;
+                margin-right: 3%;
+                margin-left: 3%;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+            }
+
+            .imageLink {
+                width: 28%;
+                /* Adjust as needed */
+                margin: 5px;
+                /* Add some margin between buttons */
+            }
+
+            #groupButtonsContainer {
+                width: 179%;
+                margin-left: -26%;
+                margin-top: 37%;
+            }
+
+            .groupButtonContainer {
+                grid-template-rows: 1fr;
+                gap: 10px;
+            }
+
+            .groupButtonContainer button {
+                width: 100%;
+            }
+
+            .groupButtonContainer button img {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
+
+        }
+
+      
+        @media only screen and (max-width: 480px) {
+            #backButton01 {
+    width: 7.8%;
+    position: fixed;
+    top: 21px;
+    left: 350px;
+    padding: 17px;
+   
+}
+#backButton {
+    width: 7.8%;
+    position: fixed;
+    top: 21px;
+    right: 18px;
+    padding: 17px;
+   
+}
+#logoTop,
+            #logoBottom {
+                max-width: 63%;
+            }
+            #logoTop {
+    width: 100%;
+    max-width: 48%;
+    height: auto;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 3%;
+}
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <img id="logoTop" src="./newimage/welcomelogo.png" alt="Top Logo">
+        <button id="backButton01" onclick="goToHome('welcome.html')"></button>
+        <button id="backButton" onclick="goBack()"></button>
+        <button id="back01" onclick="showPreviousGroup()"></button>
+        <button id="next01" onclick="showNextGroup()"></button>
+
+
+        <div id="groupButtonsContainer" class="center-row">
+            <!-- Hidden second row of buttons initially -->
+            <div id="group1" class="groupButtonContainer" style="display: none;">
+                <button onclick="goToPage('image1.html')">
+                    <img src="./newimage/industrialengine/menu2/first/Menu_1.png" alt="Icon 1">
+                </button>
+                <button onclick="goToPage('image2.html')">
+                    <img src="./newimage/industrialengine/menu2/first/Menu_2.png" alt="Icon 1">
+                </button>
+                <button onclick="goToPage('image3.html')">
+                    <img src="./newimage/industrialengine/menu2/first/Menu_3.png" alt="Icon 1">
+                </button>
+                <button onclick="goToPage('image4.html')">
+                    <img src="./newimage/industrialengine/menu2/first/Menu_4.png" alt="Icon 1">
+                </button>
+                <button onclick="goToPage('image5.html')">
+                    <img src="./newimage/industrialengine/menu2/first/Menu_5.png" alt="Icon 1">
+                </button>
+                <button onclick="goToPage('image6.html')">
+                    <img src="./newimage/industrialengine/menu2/first/Menu_6.png" alt="Icon 1">
+                </button>
+                <button onclick="goToPage('image7.html')">
+                    <img src="./newimage/industrialengine/menu2/first/Menu_7.png" alt="Icon 1">
+                </button>
+                <button onclick="goToPage('image8.html')">
+                    <img src="./newimage/industrialengine/menu2/first/Menu_8.png" alt="Icon 1">
+                </button>
+                <button onclick="goToPage('image9.html')">
+                    <img src="./newimage/industrialengine/menu2/first/Menu_9.png" alt="Icon 1">
+                </button>
+                
+
+            </div>
+
+            <div id="group2" class="groupButtonContainer" style="display: none;">
+
+                <button onclick="goToPage('image10.html')">
+                    <img src="./newimage/industrialengine/menu2/second/Menu_1.png" alt="Icon 1">
+                </button>
+                <button onclick="goToPage('image11.html')">
+                    <img src="./newimage/industrialengine/menu2/second/Menu_2.png" alt="Icon 1">
+                </button>
+                <button onclick="goToPage('image12.html')">
+                    <img src="./newimage/industrialengine/menu2/second/Menu_3.png" alt="Icon 1">
+                </button>
+                
+            </div>
+            <div id="group3" class="groupButtonContainer" style="display: none;">
+                <button onclick="goToPage('image13.html')">
+                    <img src="./newimage/industrialengine/menu2/third/Menu_1.png" alt="Icon 1">
+                </button>
+                <button onclick="goToPage('image14.html')">
+                    <img src="./newimage/industrialengine/menu2/third/Menu_2.png" alt="Icon 1">
+                </button>
+                <button onclick="goToPage('image15.html')">
+                    <img src="./newimage/industrialengine/menu2/third/Menu_3.png" alt="Icon 1">
+                </button>
+                <button onclick="goToPage('image16.html')">
+                    <img src="./newimage/industrialengine/menu2/third/Menu_4.png" alt="Icon 1">
+                </button>
+                <button onclick="goToPage('image17.html')">
+                    <img src="./newimage/industrialengine/menu2/third/Menu_5.png" alt="Icon 1">
+                </button>
+                <button onclick="goToPage('image18.html')">
+                    <img src="./newimage/industrialengine/menu2/third/Menu_6.png" alt="Icon 1">
+                </button>
+                <button onclick="goToPage('image19.html')">
+                    <img src="./newimage/industrialengine/menu2/third/Menu_7.png" alt="Icon 1">
+                </button>
+                <button onclick="goToPage('image20.html')">
+                    <img src="./newimage/industrialengine/menu2/third/Menu_8.png" alt="Icon 1">
+                </button>
+                <button onclick="goToPage('image21.html')">
+                    <img src="./newimage/industrialengine/menu2/third/Menu_9.png" alt="Icon 1">
+                </button>
+                <button onclick="goToPage('image22.html')">
+                    <img src="./newimage/industrialengine/menu2/third/Menu_10.png" alt="Icon 1">
+                </button>
+                <button onclick="goToPage('image23.html')">
+                    <img src="./newimage/industrialengine/menu2/third/Menu_11.png" alt="Icon 1">
+                </button>
+                <button onclick="goToPage('image24.html')">
+                    <img src="./newimage/industrialengine/menu2/third/Menu_12.png" alt="Icon 1">
+                </button>
+                <button onclick="goToPage('image25.html')">
+                    <img src="./newimage/industrialengine/menu2/third/Menu_13.png" alt="Icon 1">
+                </button>
+               
+
+            </div>
+            <div id="group4" class="groupButtonContainer" style="display: none;">
+                <button onclick="goToPage('image26.html')">
+                    <img src="./newimage/industrialengine/menu2/fourth/Menu_1.png" alt="Icon 1">
+                </button>
+               
+
+
+            </div>
+            <div id="group5" class="groupButtonContainer" style="display: none;">
+                <button onclick="goToPage('image27.html')">
+                    <img src="./newimage/industrialengine/menu2/fifth/Menu_1.png" alt="Icon 1">
+                </button>
+                
+
+            </div>
+            <div id="group6" class="groupButtonContainer" style="display: none;">
+                <button onclick="goToPage('image28.html')">
+                    <img src="./newimage/industrialengine/menu2/six/Menu_1.png" alt="Icon 1">
+                </button>
+               
+
+
+            </div>
+            <div id="group7" class="groupButtonContainer" style="display: none;">
+                <button onclick="goToPage('image29.html')">
+                    <img src="./newimage/industrialengine/menu2/seven/Menu_1.png" alt="Icon 1">
+                </button>
+                <button onclick="goToPage('image30.html')">
+                    <img src="./newimage/industrialengine/menu2/seven/Menu_2.png" alt="Icon 1">
+                </button>
+                
+
+            </div>
+            <!-- <input type="range" id="slider" min="0" max="300" step="1" value="0" oninput="updateGroupContainer()"> -->
+           
+
+
+        </div>
+        <div id="buttonContainer">
+            <!-- First row of buttons -->
+            <div class="imageLink" data-index="0" onclick="showGroupButtons('group1', 0)">
+                <img id="img01" src="./newimage/industrialengine/menu2/Industrial_Engine_Menu_01.png" alt="Image 1">
+            </div>
+            <!-- Add data-index attribute for the remaining buttons -->
+            <div class="imageLink" data-index="1" onclick="showGroupButtons('group2', 1)">
+                <img id="img02" src="./newimage/industrialengine/menu2/Industrial_Engine_Menu_02.png" alt="Image 2">
+            </div>
+            <div class="imageLink" data-index="2" onclick="showGroupButtons('group3', 2)">
+                <img id="img03" src="./newimage/industrialengine/menu2/Industrial_Engine_Menu_03.png" alt="Image 3">
+            </div>
+            <div class="imageLink" data-index="3" onclick="showGroupButtons('group4', 3)">
+                <img id="img04" src="./newimage/industrialengine/menu2/Industrial_Engine_Menu_04.png" alt="Image 4">
+            </div>
+            <div class="imageLink" data-index="4" onclick="showGroupButtons('group5', 4)">
+                <img id="img05" src="./newimage/industrialengine/menu2/Industrial_Engine_Menu_05.png" alt="Image 5">
+            </div>
+            <div class="imageLink" data-index="5" onclick="showGroupButtons('group6', 5)">
+                <img id="img06" src="./newimage/industrialengine/menu2/Industrial_Engine_Menu_06.png" alt="Image 6">
+            </div>
+            <div class="imageLink" data-index="6" onclick="showGroupButtons('group7', 6)">
+                <img id="img07" src="./newimage/industrialengine/menu2/Industrial_Engine_Menu_07.png" alt="Image 5">
+            </div>
+
+        </div>
+        <script>
+
+
+
+            let currentGroup = 1; // Variable to track the current group
+            const buttonsPerPage = 5; // Number of buttons to show per page
+            let currentPage = 1; // Variable to track the current page within a group
+
+            function showNextGroup() {
+                if (currentPage < Math.ceil(totalButtonsInGroup(currentGroup) / buttonsPerPage)) {
+                    currentPage++;
+                    updateGroupContainer();
+                }
+            }
+
+            function showPreviousGroup() {
+                if (currentPage > 1) {
+                    currentPage--;
+                    updateGroupContainer();
+                }
+            }
+
+            function totalButtonsInGroup(group) {
+                return document.getElementById(`group${group}`).querySelectorAll('button').length;
+            }
+
+            function updateGroupContainer() {
+                // Hide all buttons in the current group
+                document.getElementById(`group${currentGroup}`).querySelectorAll('button').forEach(button => {
+                    button.style.display = 'none';
+                });
+
+                // Calculate the range of buttons to display on the current page
+                const start = (currentPage - 1) * buttonsPerPage;
+                const end = start + buttonsPerPage;
+
+                // Show the buttons within the specified range
+                document.getElementById(`group${currentGroup}`).querySelectorAll('button').forEach((button, index) => {
+                    if (index >= start && index < end) {
+                        button.style.display = 'block';
+                    }
+                });
+
+                // Reset all buttons and update the clicked button in the current group
+                resetButtons();
+                const index = currentGroup - 1; // Adjust index as arrays are zero-based
+                const clickedButton = document.querySelector(`.imageLink[data-index="${index}"]`);
+                updateButton(clickedButton, index);
+            }
+
+            // Show the first page of buttons when the page loads
+            window.addEventListener('load', function () {
+                resetButtons();
+                updateGroupContainer();
+            });
+
+            function goToPage(page) {
+                window.location.href = page;
+            }
+
+            function goToHome(page) {
+                window.location.href = page;
+            }
+
+            function goBack() {
+                window.history.back();
+            }
+
+            let lastClickedButton = null;
+
+            const buttonImages = [
+                { original: './newimage/industrialengine/menu2/Industrial_Engine_Menu_01.png', hover: './newimage/industrialengine/menu2/Industrial_Engine_Menu_01\ hov.png' },
+                { original: './newimage/industrialengine/menu2/Industrial_Engine_Menu_02.png', hover: './newimage/industrialengine/menu2/Industrial_Engine_Menu_02hov.png' },
+                { original: './newimage/industrialengine/menu2/Industrial_Engine_Menu_03.png', hover: './newimage/industrialengine/menu2/Industrial_Engine_Menu_03hov.png' },
+                { original: './newimage/industrialengine/menu2/Industrial_Engine_Menu_04.png', hover: './newimage/industrialengine/menu2/Industrial_Engine_Menu_04hov.png' },
+                { original: './newimage/industrialengine/menu2/Industrial_Engine_Menu_05.png', hover: './newimage/industrialengine/menu2/Industrial_Engine_Menu_05hov.png' },
+                { original: './newimage/industrialengine/menu2/Industrial_Engine_Menu_06.png', hover: './newimage/industrialengine/menu2/Industrial_Engine_Menu_06hov.png' },
+                { original: './newimage/industrialengine/menu2/Industrial_Engine_Menu_07.png', hover: './newimage/industrialengine/menu2/Industrial_Engine_Menu_07hov.png' },
+
+            ];
+
+            function resetButtons() {
+                document.querySelectorAll('.imageLink.clicked').forEach(function (button) {
+                    const index = button.dataset.index;
+                    const originalImage = buttonImages[index].original;
+                    button.querySelector('img').src = originalImage;
+                    button.classList.remove('clicked');
+                });
+            }
+
+            // Show the first page of buttons when the page loads
+            window.addEventListener('load', function () {
+                showGroupButtons('group1', 0);
+
+                // Reset all buttons when the page loads
+                resetButtons();
+                updateGroupContainer();
+            });
+            function updateButton(button, index) {
+                const hoverImage = buttonImages[index].hover;
+                button.classList.add('clicked');
+                button.querySelector('img').src = hoverImage;
+            }
+
+            document.querySelectorAll('.imageLink').forEach(function (button) {
+                button.addEventListener('click', function () {
+                    resetButtons();
+                    const index = button.dataset.index;
+                    updateButton(button, index);
+                });
+            });
+
+            Back01 = document.getElementById("back01");
+            Next01 = document.getElementById("next01");
+            function showGroupButtons(groupId, index) {
+                document.querySelectorAll('.groupButtonContainer').forEach(function (group) {
+                    group.style.display = 'none';
+                    Back01.style.display = 'block';
+                    Next01.style.display = 'block';
+
+                });
+
+                document.getElementById(groupId).style.display = 'grid';
+
+                // Reset all buttons and update the clicked button in the current group
+                resetButtons();
+                const clickedButton = document.querySelector(`.imageLink[data-index="${index}"]`);
+                updateButton(clickedButton, index);
+
+                // Update the current group to match the selected button
+                currentGroup = index + 1;
+                currentPage = 1;
+
+                // Show the buttons in the selected group
+                updateGroupContainer();
+            }
+
+                function autoRedirect() {
+                // Set the timeout duration in milliseconds (e.g., 5000 for 5 seconds)
+                const timeoutDuration = 180000;
+
+                setTimeout(() => {
+                    // Specify the default page to redirect to
+                    goToPage('welcome.html');
+                }, timeoutDuration);
+            }
+
+            // Call the autoRedirect function when the page loads
+            window.onload = autoRedirect;
+        </script>
+
+
+
+
+
+
+</body>
+
+</html>

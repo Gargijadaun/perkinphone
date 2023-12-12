@@ -158,7 +158,7 @@
 }
             .image, .image1 {
                 width: 54%;
-    left: 191px;
+    left: 151px;
     margin-top: -35px;
         }
 
@@ -183,12 +183,12 @@
         .image {
     width: 62%;
     left: 89px;
-    margin-top: -49px;
+    margin-top: 0;
 }
 .image1 {
-    width: 85%;
-    left: 49px;
-    margin-top: -101px;
+    width: 62%;
+    left: 89px;
+    margin-top: 0;
 }
 
     }
@@ -202,17 +202,17 @@
         <div class="backButton01" onclick="goBack()">
             <img src="./newimage/newback.png" alt="Back Button">
         </div>
-        <div class="backButton"  onclick="goToHome('next-page.html')">
+        <div class="backButton"  onclick="goToHome('index.html')">
             <img src="./newimage/home.png" alt="Back Button">
         </div>
        
         <div class="image">
-            <img src="./newimage/frame1/Left_image01.png" alt="Left Image">
+            <img src="./newimage/industrialengine/menu1/first/Left_image01.png" alt="Left Image">
           
         </div>
 
         <div class="image1">
-            <img src="./newimage/frame1/content01.png" alt="Right Image" id="first">
+            <img src="./newimage/industrialengine/menu1/first/content01.png" alt="Right Image" id="first">
 <!--             
             <img src="./images/headin.png" alt="Image 2" id="headin">
             <img src="./images/key.png" alt="Image 2" id="child"> -->
@@ -221,7 +221,6 @@
        
         </div>
     </div>
-
 
     <script>
      
@@ -232,7 +231,18 @@
         function goToHome(page) {
             window.location.href = page;
         }
+        function autoRedirect() {
+        // Set the timeout duration in milliseconds (e.g., 5000 for 5 seconds)
+        const timeoutDuration = 180000;
 
+        setTimeout(() => {
+            // Specify the default page to redirect to
+            goToPage('index.html');
+        }, timeoutDuration);
+    }
+
+    // Call the autoRedirect function when the page loads
+    window.onload = autoRedirect;
       
     </script>
 </body>

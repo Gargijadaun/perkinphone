@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gmmco</title>
+    <style>
+         body, html {
+            position: relative;
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('./newimage/BG.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            overflow: hidden; /* Disable scrolling on the body */
+        }
+        .boxco {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            /* background-image: url('./images/logo 1.png');
+            background-repeat: no-repeat;
+            background-size: cover; */
+        }
+        
+        #video {
+            position: relative;
+            opacity: 0.2;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .image, .image1, .backButton, .backButton01,#logoTop {
+            overflow: hidden;
+            cursor: pointer;
+            height: auto;
+            animation: slideIn 1s ease-in-out;
+        }
+        .backButton:hover,.backButton01:hover {
+            transform: scale(1.2);
+        }
+        
+
+        .backButton {
+            width: 2.8%;
+            position: fixed;
+            top: 21px;
+            right: 35px;
+            animation-name: slideInRight;
+        }
+
+        .backButton img {
+            width: 100%;
+            height: auto;
+            cursor: pointer;
+        }
+        .backButton01 {
+            width: 2.8%;
+            position: fixed;
+            top: 21px;
+            left: 35px;
+            animation-name: slideInLeft;
+        }
+
+        .backButton01 img {
+            width: 100%;
+            height: auto;
+            cursor: pointer;
+        }
+
+        .image, .image1 {
+            
+            animation-name: slideInUp;
+        }
+
+        .image img, .image1 img {
+            width: 100%;
+            height: auto;
+        }
+
+        .image {
+            height: 70%;
+    top: 27%;
+    width: 46%;
+    left: 27%;
+    /* transform: translateX(-50%); */
+    position: relative;
+    }
+
+    .image1 {
+        height: 83%;
+    top: 21%;
+    width: 85%;
+    left: 0%;
+    /* transform: translateX(-50%); */
+    position: relative;
+    }
+
+      
+    #logoTop {
+       
+        transform: rotate(-90deg);
+    width: 100%;
+    max-width: 38%;
+    height: auto;
+    position: absolute;
+    left: -14%;
+    /* transform: translateX(-50%); */
+   
+        }
+
+        #logoTop {
+            top: 39%;
+        }
+
+
+      
+     
+       
+      
+        @keyframes slideInLeft {
+            from {
+                transform: translateX(-100%);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                transform: translateX(100%);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
+        @keyframes slideInUp {
+            from {
+                transform: translateY(100%);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        @media only screen and (max-width: 768px) {
+            .boxco {
+                grid-template-columns: 1fr;
+            }
+            .image img, .image1 img {
+    width: 89%;
+    height: auto;
+}
+            .image, .image1 {
+                width: 54%;
+    left: 151px;
+    margin-top: -35px;
+        }
+
+        .backButton {
+            width: 5.8%;
+        }
+        .backButton01 {
+            width: 5.8%;
+        }
+       
+     
+        #logoTop {
+            top: 21%;
+        }
+    }
+    
+    @media only screen and (max-width: 480px) {
+        #logoTop {
+            top: 21%;
+        }
+      
+        .image {
+    width: 62%;
+    left: 89px;
+    margin-top: 0;
+}
+.image1 {
+    width: 62%;
+    left: 89px;
+    margin-top: 0;
+}
+
+    }
+    
+   
+    </style>
+</head>
+<body>
+    <div class="boxco">
+        <img id="logoTop" src="./newimage/logo.png" alt="Top Logo">
+        <div class="backButton01" onclick="goBack()">
+            <img src="./newimage/newback.png" alt="Back Button">
+        </div>
+        <div class="backButton"  onclick="goToHome('welcome.html')">
+            <img src="./newimage/home.png" alt="Back Button">
+        </div>
+       
+        <div class="image">
+            <img src="./newimage/industrialengine/menu2/seven/Left_image02.png" alt="Left Image">
+          
+        </div>
+
+        <div class="image1">
+            <img src="./newimage/industrialengine/menu2/seven/content02.png" alt="Right Image" id="first">
+<!--             
+            <img src="./images/headin.png" alt="Image 2" id="headin">
+            <img src="./images/key.png" alt="Image 2" id="child"> -->
+            
+        </div>
+       
+        </div>
+    </div>
+
+    <script>
+     
+        function goBack() {
+            window.history.back();
+        }
+
+        function goToHome(page) {
+            window.location.href = page;
+        }
+        function autoRedirect() {
+        // Set the timeout duration in milliseconds (e.g., 5000 for 5 seconds)
+        const timeoutDuration = 180000;
+
+        setTimeout(() => {
+            // Specify the default page to redirect to
+            goToPage('welcome.html');
+        }, timeoutDuration);
+    }
+
+    // Call the autoRedirect function when the page loads
+    window.onload = autoRedirect;
+      
+    </script>
+</body>
+</html>

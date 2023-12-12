@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <style>
+        body {
+            margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    background-image: url('./newimage/Frame_2000\ Series.jpg');
+    background-repeat: no-repeat, no-repeat;
+    background-size: cover, cover;
+    text-align: center;
+    overflow: hidden;
+        }
+        .backButton {
+            width: 2.8%;
+            position: fixed;
+            top: 21px;
+            right: 35px;
+            animation-name: slideInRight;
+        }
+
+        .backButton img {
+            width: 100%;
+            height: auto;
+            cursor: pointer;
+        }
+        .backButton01 {
+            width: 2.8%;
+            position: fixed;
+            top: 21px;
+            left: 35px;
+            animation-name: slideInLeft;
+        }
+
+        .backButton01 img {
+            width: 100%;
+            height: auto;
+            cursor: pointer;
+        }
+
+        #container {
+          
+            position: relative;
+            text-align: center;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        #logoTop, #logoBottom {
+            width: 100%;
+            max-width: 28%;
+            height: auto;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        #logoTop {
+            top: 5%;
+        }
+
+        #logoBottom {
+            display: none;
+            bottom: 5%;
+        }
+        #button {
+    width: 100%;
+    max-width: 849px;
+    height: 255px;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    background-image: url('./newimage/homebtn.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#button:hover {
+    transform: translate(-50%, -50%) scale(1.2);
+}
+        @media only screen and (max-width: 768px) {
+            /* Add styles for smaller screens if needed */
+            #logoTop, #logoBottom {
+                max-width: 50%;
+            }
+
+            #button {
+                width: 90%;
+            }
+            .backButton01 {
+    width: 7.8%;
+    position: fixed;
+    top: 21px;
+    left: 3px;
+    padding: 17px;
+   
+}
+.backButton {
+    width: 7.8%;
+    position: fixed;
+    top: 21px;
+    right: 3px;
+    padding: 17px;
+   
+}
+#logoTop,
+            #logoBottom {
+                max-width: 63%;
+            }
+            #logoTop {
+    width: 100%;
+    max-width: 48%;
+    height: auto;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 3%;
+}
+        }
+        
+    </style>
+    <title>Gmmco</title>
+</head>
+<body>
+    <div id="container">
+        <div class="backButton01" onclick="goBack()">
+            <img src="./newimage/newback.png" alt="Back Button">
+        </div>
+        <div class="backButton"  onclick="goToHome('index.html')">
+            <img src="./newimage/home.png" alt="Back Button">
+        </div>
+        <img id="logoTop" src="./newimage/welcomelogo.png" alt="Top Logo">
+       
+        <img id="logoBottom" src="./newimage/homedowntext.png" alt="Bottom Logo">
+    </div>
+    <script>
+        function goToNextPage() {
+            window.location.href = 'next-page.html';
+        }
+   
+     
+     function goBack() {
+         window.history.back();
+     }
+
+     function goToHome(page) {
+         window.location.href = page;
+     }
+
+     function autoRedirect() {
+        // Set the timeout duration in milliseconds (e.g., 5000 for 5 seconds)
+        const timeoutDuration = 180000;
+
+        setTimeout(() => {
+            // Specify the default page to redirect to
+            goToPage('index.html');
+        }, timeoutDuration);
+    }
+
+    // Call the autoRedirect function when the page loads
+    window.onload = autoRedirect;
+
+    </script>
+</body>
+</html>

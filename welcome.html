@@ -3,106 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="style.css"> -->
     <style>
         body {
             margin: 0;
             padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            background: url('./newimage/welcomepage.jpg') no-repeat center center fixed;
+            background-size: 100% 100%; /* Change from cover to 100% 100% */
             height: 100vh;
-            overflow: hidden;
-            background-image: url('./newimage/BG.png');
-            background-repeat: no-repeat;
-            background-size: cover;
-            text-align: center;
+            position: relative;
             overflow: hidden;
         }
 
         #container {
-            position: relative;
-            text-align: center;
-            width: 100vw;
-            height: 100vh;
-        }
-
-        #logoTop, #logoBottom {
             width: 100%;
-            max-width: 28%;
-            height: auto;
-            position: absolute;
+            min-height: 100vh; /* Ensure a minimum height for the container */
+            position: fixed;
+            top: 50%;
             left: 50%;
-            transform: translateX(-50%);
+            transform: translate(-50%, -50%);
+            text-align: center;
         }
 
-        #logoTop {
-            top: 5%;
-        }
-
-        #logoBottom {
-            bottom: 5%;
+        @keyframes buttonAnimation {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
         }
 
         #button {
-            width: 100%;
-            max-width: 849px;
-            height: 255px;
-            cursor: pointer;
-            background-color: transparent;
+            top: 35%;
+    left: 0%;
+    padding: 15px 30px;
+    margin-top: 166px;
+    width: 80%;
+    max-width: 300px;
+    height: 70px;
+    cursor: pointer;
+    background-color: transparent;
             border: none;
             background-image: url('./newimage/homebtn.png');
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            animation: buttonAnimation 1s infinite;
+            position: relative;
+            z-index: 1;
         }
 
-        #button:hover {
-            transform: translate(-50%, -50%) scale(1.2);
-        }
-
-        @media only screen and (max-width: 768px) {
-            #logoTop, #logoBottom {
-                max-width: 50%;
-            }
-
-            #button {
-                width: 90%;
-            }
-        }
-
-        @media only screen and (max-width: 480px) {
-            #logoTop, #logoBottom {
-                max-width: 70%;
-            }
-
-            #button {
-                width: 90%;
-            }
-        }
-
-        @media only screen and (orientation: landscape) {
-            #logoTop, #logoBottom {
-                max-width: 40%;
-            }
-
-            #button {
-                width: 80%;
-            }
+        #logoTop {
+            top: 10%;
+            width: 74%;
+            height: auto;
+            z-index: 0;
         }
     </style>
     <title>Gmmco</title>
 </head>
 <body>
     <div id="container">
-        <img id="logoTop" src="./newimage/logo.png" alt="Top Logo">
+        
+        <img id="logoTop" src="./newimage/welcomelogo.png" alt="Top Logo">
         <button id="button" onclick="goToNextPage()"></button>
-        <img id="logoBottom" src="./newimage/homedowntext.png" alt="Bottom Logo">
     </div>
     <script>
         function goToNextPage() {

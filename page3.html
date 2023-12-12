@@ -13,47 +13,58 @@
             align-items: center;
             justify-content: center;
             height: 100vh;
-            overflow: hidden;
-            background-image: url('./newimage/BG.png');
+overflow: hidden;
+            background-image: url('./newimage/partsimage/partsbg.jpg');
             background-repeat: no-repeat;
             background-size: cover;
             text-align: center;
-            overflow: hidden;
+            
         }
 
 
         #container {
             display: grid;
-            grid-template-areas:
-                "topLogo topHeading"
-                "buttons buttons"
-            ;
-            /* Added images area */
-            grid-template-rows: auto 1fr auto;
-            /* Adjusted for images area */
+
+            grid-template-rows: auto 1fr;
+            /* Adjusted for iframeContainer */
             gap: 20px;
             align-items: center;
             width: 100%;
             height: 100%;
             position: relative;
-            /* Added for absolute positioning */
         }
 
-
+        #One {
+            width: 91%;
+    /* max-width: 100%; */
+    margin-top: 46%;
+    margin-left: 92%;
+        }
 
 
         #buttonContainer {
-            margin-right: 10%;
-            margin-left: 11%;
-            margin-bottom: -7%;
-            grid-area: buttons;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            justify-content: center;
-            align-items: center;
+            margin-top: -134%;
+    margin-right: 11%;
+    margin-left: -14%;
+    margin-bottom: 19%;
+    grid-area: buttons;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0px;
+    justify-content: center;
+    align-items: center;
         }
-
+        @keyframes buttonAnimation {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
         @keyframes slideInLeft {
             from {
                 transform: translateX(-100%);
@@ -76,22 +87,20 @@
 
         .imageLink {
             display: inline-block;
-            overflow: hidden;
-            transition: transform 0.3s, opacity 0.3s;
-            border-top-right-radius: 30px;
-            border-bottom-left-radius: 30px;
-            cursor: pointer;
-            margin-bottom: 117px;
-            width: 92%;
-            animation: slideUp 1s ease-in-out;
-            /* Added animation property */
-            opacity: 1;
-            /* Start with opacity 0 */
+    overflow: hidden;
+    transition: transform 0.3s, opacity 0.3s;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    cursor: pointer;
+    margin-bottom: 135px;
+    width: 81%;
+    animation: slideUp 1s ease-in-out;
+    animation: buttonAnimation 1.5s infinite;
         }
 
         .imageLink img {
             box-sizing: border-box;
-            width: 100%;
+            width: 59%;
             height: auto;
             border: 0;
             border-top-right-radius: 30px;
@@ -118,8 +127,9 @@
         }
 
         #backButton {
+            position: fixed;
             animation-name: slideInLeft;
-            position: absolute;
+
             top: 29px;
             right: 40px;
             cursor: pointer;
@@ -133,8 +143,9 @@
         }
 
         #backButton01 {
+            position: fixed;
             animation-name: slideInLeft;
-            position: absolute;
+
             top: 29px;
             left: 28px;
             cursor: pointer;
@@ -152,13 +163,13 @@
 
 
 
-            #buttonContainer {
+            /* #buttonContainer {
                 margin-right: -6%;
-                margin-left: 13%;
-                margin-top: 4%;
+                margin-left: 2%;
+                margin-bottom: -95%;
                 grid-area: buttons;
                 display: grid;
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: repeat(4, 1fr);
                 gap: 0%;
                 justify-content: center;
                 align-items: center;
@@ -171,9 +182,11 @@
                 border-top-right-radius: 30px;
                 border-bottom-left-radius: 30px;
                 cursor: pointer;
-                margin-bottom: 18%;
-                width: 61%;
-            }
+                margin-bottom: 194%;
+                /* Adjust the margin as needed 
+                width: 73%;
+                /* Adjust the width as needed 
+            } */
 
             #backButton {
                 top: 18px;
@@ -190,44 +203,58 @@
             }
         }
 
-        @media only screen and (max-width: 480px) {
+        /* @media only screen and (max-width: 480px) {
             #buttonContainer {
-                margin-left: 4%;
-                margin-top: -68%;
+                margin-left: 15%;
+                margin-top: -4%;
                 margin-bottom: -62%;
                 grid-template-columns: repeat(2, 1fr);
             }
 
             .imageLink {
                 margin-bottom: 23%;
-                width: 79%;
+                width: 49%;
             }
 
-        }
+        } */
     </style>
 </head>
 
 <body>
     <div id="container">
-
-        <button id="backButton01" onclick="goBack()"></button>
-        <button id="backButton" onclick="goToHome('next-page.html')"></button>
         <div id="buttonContainer">
-            <div class="imageLink">
+            <div class="imageLink" onclick="goToPage('part1.html')">
                 <img id="img01" src="./newimage/partsimage/01_content.png" alt="Image 1">
             </div>
-            <div class="imageLink">
+            <div class="imageLink" onclick="goToPage('part2.html')">
                 <img id="img02" src="./newimage/partsimage/02_content.png" alt="Image 2">
             </div>
-            <div class="imageLink">
+            <div class="imageLink" onclick="goToPage('part3.html')">
                 <img id="img03" src="./newimage/partsimage/03_content.png" alt="Image 3">
             </div>
-            <div class="imageLink">
-                <img id="img04" src="./newimage/partsimage/04_content.png" alt="Image 4">
-            </div>
+
 
         </div>
 
+        <!-- <div id="iframeContainer">
+            <iframe src="https://mxstudio.appdataroom.com/?f=MPlNT6rm" frameborder="0"></iframe>
+        </div> -->
+        <button id="backButton01" onclick="goBack()"></button>
+        <button id="backButton" onclick="goToHome('welcome.html')"></button>
+        <video id="One" autoplay loop muted >
+            <source src="./newimage/partsimage/Performance under pressure.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <!-- <img src="./newimage/partsimage/Parts selection.png" alt="Image 1" style="     width: 28%;
+        max-width: 820px;
+        margin-top: -83%;
+        margin-left: -8%;"> -->
+ <!-- <img src="./newimage/partsimage/Together, we power ahead..png" alt="Image 1" style="       width: 30%;
+ max-width: 820px;
+ margin-top: 0%;
+ margin-left: 87%;">
+
+        -->
     </div>
 
     <script>
@@ -239,6 +266,23 @@
             // Implement the functionality to go back as needed
             window.history.back();
         }
+        function goToPage(page) {
+            window.location.href = page;
+        }
+
+
+            function autoRedirect() {
+            // Set the timeout duration in milliseconds (e.g., 5000 for 5 seconds)
+            const timeoutDuration = 180000;
+
+            setTimeout(() => {
+                // Specify the default page to redirect to
+                goToPage('welcome.html');
+            }, timeoutDuration);
+        }
+
+        // Call the autoRedirect function when the page loads
+        window.onload = autoRedirect;
     </script>
 </body>
 

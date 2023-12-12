@@ -1,107 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-         html, body {
+body {
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    background-image: url('./newimage/electricbg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    overflow-y: scroll; /* Enable vertical scrolling */
+    background-attachment: fixed;
 }
-        body {
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            overflow: hidden;
-            background-image: url('./newimage/BG.png');
-            background-repeat: no-repeat;
-            background-size: cover;
-            text-align: center;
-            overflow: hidden;
-        }
 
-        #container {
-            display: grid;
-            grid-template-areas:
-                "topLogo topHeading"
-                "buttons buttons";
-            grid-template-rows: auto 1fr;
-            gap: 20px;
-            align-items: center;
-            width: 100%;
-            height: 100%;
-            position: relative; /* Added for absolute positioning */
-        }
 
+#container {
+    display: grid;
+    grid-template-areas:
+        "topLogo"
+        "buttons"
+        "bottomLogo";
+    grid-template-rows: auto 1fr auto;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+@media only screen and (max-height: 600px) {
+    body {
+        background-attachment: scroll;
+    }
+}
         #logoTop {
             width: 100%;
             max-width: 28%;
             height: auto;
             position: absolute;
+            left: 26%;
+            transform: translateX(-50%);
+            top: 1%;
+        }
+
+        #logoBottom {
+            width: 18%;
+            max-width: 75%;
+            height: auto;
+            position: absolute;
             left: 50%;
             transform: translateX(-50%);
-            top: 3%;
+            bottom: 2%;
         }
 
-        #top {
-            width: 100%;
-    max-width: 23%;
-    height: auto;
-    position: absolute;
-    left: 0%;
-    top: 18%;
-        }
-
-        #bottom {
-            width: 100%;
-    max-width: 23%;
-    height: auto;
-    position: absolute;
-    left: 0%;
-    top: 55%;
+        @keyframes buttonAnimation {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
         }
 
         #buttonContainer {
-            margin-right: 10%;
-            margin-left: 22%;
-            margin-bottom: 9%; /* Adjust the margin as needed */
+            margin-bottom: 25%;
             grid-area: buttons;
+            margin-right: 10%;
+            margin-left: 59%;
             display: grid;
-            grid-template-columns: repeat(4, 1fr); /* Eight buttons, adjust as needed */
-            gap: 20px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0px;
             justify-content: center;
             align-items: center;
         }
-        #buttonContainer01 {
-            margin-right: 10%;
-            margin-left: 22%;
-            margin-bottom: -32%; /* Adjust the margin as needed */
-            grid-area: buttons;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr); /* Eight buttons, adjust as needed */
-            gap: 20px;
-            justify-content: center;
-            align-items: center;
-        }
+
         .imageLink {
             display: inline-block;
             overflow: hidden;
-            transition: transform 0.3s;
+            transition: transform 0.3s, opacity 0.5s;
             border-top-right-radius: 30px;
             border-bottom-left-radius: 30px;
             cursor: pointer;
-            margin-bottom: 52px; /* Adjust the margin as needed */
-            width: 96%; /* Adjust the width as needed */
+            text-align: center;
+            animation: fadeIn 1s forwards;
+            animation: buttonAnimation 1s infinite;
+        }
+
+        .backButton {
+            width: 2.8%;
+            position: fixed;
+            top: 21px;
+            right: 35px;
+            animation-name: slideInRight;
+        }
+
+        .backButton img {
+            width: 100%;
+            height: auto;
+            cursor: pointer;
+        }
+
+        .backButton01 {
+            width: 2.8%;
+            position: fixed;
+            top: 21px;
+            left: 35px;
+            animation-name: slideInLeft;
+        }
+
+        .backButton01 img {
+            width: 100%;
+            height: auto;
+            cursor: pointer;
         }
 
         .imageLink img {
             box-sizing: border-box;
-            width: 100%;
+            width: 85%;
             height: auto;
             border: 0;
             border-top-right-radius: 30px;
@@ -109,198 +128,136 @@
             transition: transform 0.3s;
         }
 
-      
-
-        #backButton {
-            position: absolute;
-            top: 29px;
-            right: 40px;
-            cursor: pointer;
-            padding: 26px;
-            background-color: transparent;
-            border: none;
-            overflow: hidden;
-            background-image: url(./newimage/home.png);
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-        #backButton01 {
-            position: absolute;
-            top: 29px;
-            left: 28px;
-            cursor: pointer;
-            padding: 26px;
-            background-color: transparent;
-            border: none;
-            overflow: hidden;
-            background-image: url(./newimage/newback.png);
-            background-repeat: no-repeat;
-            background-size: cover;
+        .imageLink:hover {
+            transform: scale(1.2);
         }
 
-        @media only screen and (max-width: 768px) {
-            #top {
-            width: 100%;
-    max-width: 23%;
-    height: auto;
-    position: absolute;
-    left: 0%;
-    top: 18%;
+        .imageLink:hover img {
+            content: url('./newimage/Menu_01electrichov.png');
         }
 
-        #bottom {
-            width: 100%;
-    max-width: 23%;
-    height: auto;
-    position: absolute;
-    left: 0%;
-    top: 55%;
+        .imageLink:hover #img02 {
+            content: url('./newimage/Menu_02electrichov.png');
         }
 
-            #logoTop {
-                max-width: 53%;
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media only screen and (max-width: 600px) {
+            .backButton01 {
+                width: 7.8%;
+                position: fixed;
+                top: 21px;
+                left: 3px;
+                padding: 17px;
             }
 
-          
-        #buttonContainer {
-            margin-right: -6%;
-    margin-left: 2%;
-    margin-bottom: 25%;
-    grid-area: buttons;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 0%;
-    justify-content: center;
-    align-items: center;
-        }
-        #buttonContainer01 {
-            margin-right: -6%;
-    margin-left: 2%;
-    margin-bottom: -83%;
-    grid-area: buttons;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 0%;
-    justify-content: center;
-    align-items: center;
-        }
-        .imageLink {
-            display: inline-block;
-            overflow: hidden;
-            transition: transform 0.3s;
-            border-top-right-radius: 30px;
-            border-bottom-left-radius: 30px;
-            cursor: pointer;
-            margin-bottom: 114%;/* Adjust the margin as needed */
-            width: 73%; /* Adjust the width as needed */
-        }
+            .backButton {
+                width: 7.8%;
+                position: fixed;
+                top: 21px;
+                right: 3px;
+                padding: 17px;
+            }
 
-            #backButton {
-            top: 18px;
-    right: 11px;
-    cursor: pointer;
-    padding: 20px
-        }
-        #backButton01 {
-            top: 18px;
-    left: 11px;
-    cursor: pointer;
-    padding: 20px
-        }
-    }
+            #logoTop,
+            #logoBottom {
+                max-width: 63%;
+            }
 
-    @media only screen and (max-width: 480px) {
-        #top {
-            width: 100%;
-    max-width: 69%;
-    height: auto;
-    position: absolute;
-    left: 0%;
-    top: 12%;
-        }
+            #logoTop {
+                width: 100%;
+                max-width: 48%;
+                height: auto;
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                top: 3%;
+            }
 
-        #bottom {
-            width: 100%;
-    max-width: 69%;
-    height: auto;
-    position: absolute;
-    left: 0%;
-    top: 50%;
-        }
+            #logoTop,
+            #logoBottom {
+                max-width: 80%;
+            }
 
-        #buttonContainer {
-            margin-left: 14%;
-    margin-top: -64%;
-    margin-bottom: 0%;
-    grid-template-columns: repeat(2, 1fr);
-            } 
-            #buttonContainer01 {
-                margin-left: 14%;
-    margin-top: 0%;
-    margin-bottom: -109%;
-    grid-template-columns: repeat(2, 1fr);
-            } 
+            #buttonContainer {
+                margin-top: -10%;
+                margin-right: 20px;
+                margin-left: 24px;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 49px;
+                overflow-x: auto;
+                white-space: nowrap;
+                height: 57vh;
+            }
+
             .imageLink {
-                margin-bottom: 28%;
-    width: 64%;
+                margin-right: 0;
+            }
 
-    }}
+            .imageLink img {
+                width: 74%;
+            }
+        }
     </style>
 </head>
+
 <body>
     <div id="container">
-        <img id="logoTop" src="./newimage/logo.png" alt="Top Logo">
-        <button id="backButton01" onclick="goBack()"></button>
-        <button id="backButton" onclick="goToHome('next-page.html')"></button>
-       
-
+        <div class="backButton01" onclick="goBack()">
+            <img src="./newimage/newback.png" alt="Back Button">
+        </div>
+        <div class="backButton"  onclick="goToHome('welcome.html')">
+            <img src="./newimage/home.png" alt="Back Button">
+        </div>
+        <img id="logoTop" src="./newimage/welcomelogo.png" alt="Top Logo">
         <div id="buttonContainer">
-            <img id="top" src="./newimage/2000b.png" alt="Top Logo">
-          
-            <div class="imageLink" onclick="goToPage('box1.html')">
-                <img id="img01" src="./newimage/2000btn1.png" alt="Image 1">
+            <div class="imageLink" onclick="goToPage('2000series.html')">
+                <img id="img01" src="./newimage/Menu_01electric.png" alt="Image 1">
             </div>
-            <div class="imageLink" onclick="goToPage('box1.html')">
-                <img id="img02" src="./newimage/2000btn2.png" alt="Image 2">
+            <div class="imageLink" onclick="goToPage('4000series.html')">
+                <img id="img02" src="./newimage/Menu_02electric.png" alt="Image 2">
             </div>
-            <div class="imageLink" onclick="goToPage('box1.html')">
-                <img id="img03" src="./newimage/2000btn3.png" alt="Image 3">
-            </div>
-            <div class="imageLink" onclick="goToPage('box1.html')">
-                <img id="img04" src="./newimage/2000btn4.png" alt="Image 4">
-            </div>
+            <!-- Add two more image links as needed -->
            
         </div>
-        <div id="buttonContainer01">
-            <img id="bottom" src="./newimage/4000b.png" alt="Top Logo">
-            <!-- Add four more image links as needed -->
-            <div class="imageLink" onclick="goToPage('box1.html')">
-                <img id="img05" src="./newimage/4000btn1.png" alt="Image 5">
-            </div>
-            <div class="imageLink" onclick="goToPage('box1.html')">
-                <img id="img06" src="./newimage/4000btn2.png" alt="Image 6">
-            </div>
-            <div class="imageLink" onclick="goToPage('box1.html')">
-                <img id="img07" src="./newimage/4000btn3.png" alt="Image 7">
-            </div>
-            <div class="imageLink" onclick="goToPage('box1.html')">
-                <img id="img08" src="./newimage/4000btn4.png" alt="Image 8">
-            </div>
-        </div>
+        <!-- <img id="logoBottom" src="./newimage/partsimage/Together, we power ahead..png" alt="Bottom Logo"> -->
     </div>
 
     <script>
         function goToPage(page) {
             window.location.href = page;
         }
-        
-        function goToHome(page) {
-            window.location.href = page;
-        }
-        function goBack() {
-            // Implement the functionality to go back as needed
-            window.history.back();
-        }
+          
+     function goBack() {
+         window.history.back();
+     }
+
+     function goToHome(page) {
+         window.location.href = page;
+     }
+     function autoRedirect() {
+        // Set the timeout duration in milliseconds (e.g., 5000 for 5 seconds)
+        const timeoutDuration = 180000;
+
+        setTimeout(() => {
+            // Specify the default page to redirect to
+            goToPage('welcome.html');
+        }, timeoutDuration);
+    }
+
+    // Call the autoRedirect function when the page loads
+    window.onload = autoRedirect;
+   
     </script>
 </body>
+
 </html>

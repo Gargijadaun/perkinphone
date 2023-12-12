@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+          overflow: hidden;
+            background-image: url('./newimage/BG.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            text-align: center;
+            background-attachment: fixed; 
+        }
+
+   
+        #container {
+            display: grid;
+           
+            grid-template-rows: auto 1fr; /* Adjusted for iframeContainer */
+            gap: 20px;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+      #One{
+        width: 50%;
+    /* max-width: 100%; */
+    margin-top: 13%;
+    margin-left: 25%;
+      }
+
+      #Two{
+        width: 39%;
+    margin-top: 4%;
+    margin-left: 6%;
+      }
+
+      
+      #Three{
+        width: 47%;
+    margin-top: 4%;
+    margin-left: 6%;
+      }
+
+        /* #buttonContainer {
+            margin-right: 10%;
+    margin-left: 50%;
+    margin-bottom: -7%;
+    grid-area: buttons;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+        } */
+
+        @keyframes slideInLeft {
+            from {
+                transform: translateX(-100%);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                transform: translateX(100%);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
+        /* .imageLink {
+        display: inline-block;
+        overflow: hidden;
+        transition: transform 0.3s, opacity 0.3s;
+        border-top-right-radius: 30px;
+        border-bottom-left-radius: 30px;
+        cursor: pointer;
+        margin-bottom: 117px;
+        width: 92%;
+        animation: slideUp 1s ease-in-out; /* Added animation property 
+        opacity: 1; /* Start with opacity 0
+    }
+
+    .imageLink img {
+        box-sizing: border-box;
+        width: 100%;
+        height: auto;
+        border: 0;
+        border-top-right-radius: 30px;
+        border-bottom-left-radius: 30px;
+        transition: transform 0.3s;
+    } */
+
+    @keyframes slideUp {
+        0% {
+            transform: translateY(50px);
+            opacity: 0;
+        }
+        100% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+       
+        #backButton:hover,
+        #backButton01:hover {
+            transform: scale(1.2);
+        }
+
+        #backButton {
+            position: fixed;
+            animation-name: slideInLeft;
+        
+            top: 29px;
+            right: 40px;
+            cursor: pointer;
+            padding: 26px;
+            background-color: transparent;
+            border: none;
+            overflow: hidden;
+            background-image: url(./newimage/home.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        #backButton01 {
+            position: fixed;
+            animation-name: slideInLeft;
+        
+            top: 29px;
+            left: 28px;
+            cursor: pointer;
+            padding: 26px;
+            background-color: transparent;
+            border: none;
+            overflow: hidden;
+            background-image: url(./newimage/newback.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+     
+        @media only screen and (max-width: 768px) {
+
+
+
+            /* #buttonContainer {
+                margin-right: -6%;
+                margin-left: 2%;
+                margin-bottom: -95%;
+                grid-area: buttons;
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 0%;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .imageLink {
+                display: inline-block;
+                overflow: hidden;
+                transition: transform 0.3s;
+                border-top-right-radius: 30px;
+                border-bottom-left-radius: 30px;
+                cursor: pointer;
+                margin-bottom: 194%;
+                /* Adjust the margin as needed 
+                width: 73%;
+                /* Adjust the width as needed 
+            } */
+
+            #backButton {
+                top: 18px;
+                right: 11px;
+                cursor: pointer;
+                padding: 20px
+            }
+
+            #backButton01 {
+                top: 18px;
+                left: 11px;
+                cursor: pointer;
+                padding: 20px
+            }
+        }
+
+        /* @media only screen and (max-width: 480px) {
+            #buttonContainer {
+                margin-left: 15%;
+                margin-top: -4%;
+                margin-bottom: -62%;
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .imageLink {
+                margin-bottom: 23%;
+                width: 49%;
+            }
+
+        } */
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <!-- <div id="iframeContainer">
+            <iframe src="https://mxstudio.appdataroom.com/?f=MPlNT6rm" frameborder="0"></iframe>
+        </div> -->
+        <button id="backButton01" onclick="goBack()"></button>
+        <button id="backButton" onclick="goToHome('welcome.html')"></button>
+       
+        <img src="./newimage/partsimage/lasttext.jpg" alt="Image 2" style="width: 100%;
+        margin-left: 181px;
+        max-width: 1500px;
+        margin-top: 5%;">
+
+<img src="./newimage/partsimage/Together, we power ahead..png" alt="Image 1" style="     width: 17%;
+max-width: 820px;
+margin-top: -3%;
+margin-left: 44%;">
+
+    </div>
+
+    <script>
+       
+        function goToHome(page) {
+            window.location.href = page;
+        }
+        function goBack() {
+            // Implement the functionality to go back as needed
+            window.history.back();
+        }
+        function autoRedirect() {
+        // Set the timeout duration in milliseconds (e.g., 5000 for 5 seconds)
+        const timeoutDuration = 180000;
+
+        setTimeout(() => {
+            // Specify the default page to redirect to
+            goToPage('welcome.html');
+        }, timeoutDuration);
+    }
+
+    // Call the autoRedirect function when the page loads
+    window.onload = autoRedirect;
+    </script>
+</body>
+
+</html>

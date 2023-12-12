@@ -13,7 +13,7 @@
             justify-content: center;
             height: 100vh;
             overflow: hidden;
-            background-image: url('./newimage/BG.png');
+            background-image: url('./newimage/mainmenu/homebg.png');
             background-repeat: no-repeat;
             background-size: cover;
             text-align: center;
@@ -81,26 +81,31 @@
       
 
         .imageLink:hover img {
-            content: url('./newimage/Electric\ Powerhov.png'); /* Change to the actual hover image path */
+            content: url('./newimage/mainmenu/Menu_01hov.png');
+            /* Change to the actual hover image path */
         }
 
         .imageLink:hover #img02 {
-            content: url('./newimage/Industrial\ Enginehov.png'); /* Change to the actual hover image path */
+            content: url('./newimage/mainmenu/Menu_02hov.png');
+            /* Change to the actual hover image path */
         }
 
         .imageLink:hover #img03 {
-            content: url('./newimage/Partshov1.png'); /* Change to the actual hover image path */
+            content: url('./newimage/mainmenu/Menu_03hov.png');
+            /* Change to the actual hover image path */
         }
 
         .imageLink:hover #img04 {
-            content: url('./newimage/Partshove2.png'); /* Change to the actual hover image path */
+            content: url('./newimage/mainmenu/Menu_04hov.png');
+            /* Change to the actual hover image path */
         }
+
 
        /* ... (your existing styles) ... */
 
-       @media only screen and (max-width: 768px) {
+       @media only screen and (max-width: 900px) {
     #logoTop, #logoBottom {
-        max-width: 54%;
+        max-width: 70%;
     }
 
     #buttonContainer {
@@ -119,34 +124,33 @@
     }
 
     .imageLink img {
-        width: 67%; /* Adjust image width to fill the container */
-    }
+        width: 85%; /* Adjust image width to fill the container */
+    
 }
-
+       }
 
     </style>
 </head>
 <body>
     <div id="container">
-        <img id="logoTop" src="./newimage/logo.png" alt="Top Logo">
+        <img id="logoTop" src="./newimage/welcomelogo.png" alt="Top Logo">
         <div id="buttonContainer">
             <div class="imageLink" onclick="goToPage('page1.html')">
-                <img id="img01" src="./newimage/Electric Power01.png" alt="Image 1">
+                <img id="img01" src="./newimage/mainmenu/Menu_01.png" alt="Image 1">
             </div>
             <div class="imageLink" onclick="goToPage('page2.html')">
-                <img id="img02" src="./newimage/Industrial Engine02.png" alt="Image 2">
+                <img id="img02" src="./newimage/mainmenu/Menu_02.png" alt="Image 2">
             </div>
             <!-- Add two more image links as needed -->
             <div class="imageLink" onclick="goToPage('page3.html')">
-                <img id="img03" src="./newimage/Parts03.png" alt="Image 3">
+                <img id="img03" src="./newimage/mainmenu/menu_03.png" alt="Image 3">
             </div>
             <div class="imageLink" onclick="goToPage('page4.html')">
-                <img id="img04" src="./newimage/Parts04.png" alt="Image 4">
+                <img id="img04" src="./newimage/mainmenu/menu_04.png" alt="Image 4">
             </div>
         </div>
-        <img id="logoBottom" src="./newimage/homedowntext.png" alt="Bottom Logo">
+        <!-- <img id="logoBottom" src="./newimage/homedowntext.png" alt="Bottom Logo"> -->
     </div>
-
     <script>
         function goToPage(page) {
             window.location.href = page;

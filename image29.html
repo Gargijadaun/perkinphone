@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gmmco</title>
+    <style>
+        body, html {
+            position: relative;
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('./newimage/BG.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    
+        .boxco {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            /* background-image: url('./images/logo 1.png');
+            background-repeat: no-repeat;
+            background-size: cover; */
+        }
+         .button.clicked #img01 {
+            content: url('./newimage/industrialengine/menu2/seven/T1hov.png');  
+        }
+        .button.clicked #img02 {
+            content: url('./newimage/industrialengine/menu2/seven/T2hov.png'); 
+        }
+        .button.clicked #img03 {
+            content: url('./newimage/industrialengine/menu2/seven/T3hov.png');
+        }
+        #video {
+            position: relative;
+            opacity: 0.2;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .image, .image1, .backButton, .backButton01, .image-text, #buttonContainer,#logoTop {
+            overflow: hidden;
+            cursor: pointer;
+            height: auto;
+            animation: slideIn 1s ease-in-out;
+        }
+        .backButton:hover,.backButton01:hover {
+            transform: scale(1.2);
+        }
+        .button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+        }
+        #img01:hover {
+            content: url('./newimage/industrialengine/menu2/seven/T1hov.png');   
+        }
+        #img02:hover  {
+            content: url('./newimage/industrialengine/menu2/seven/T2hov.png');   
+        }
+      #img03:hover {
+            content: url('./newimage/industrialengine/menu2/seven/T3hov.png');   
+        }
+
+        .button img {
+            width: 100%;
+            height: auto;
+        }
+
+        .backButton {
+            width: 2.8%;
+            position: fixed;
+            top: 21px;
+            right: 35px;
+            animation-name: slideInRight;
+        }
+
+        .backButton img {
+            width: 100%;
+            height: auto;
+            cursor: pointer;
+        }
+        .backButton01 {
+            width: 2.8%;
+            position: fixed;
+            top: 21px;
+            left: 35px;
+            animation-name: slideInLeft;
+        }
+
+        .backButton01 img {
+            width: 100%;
+            height: auto;
+            cursor: pointer;
+        }
+
+        .image, .image1 {
+            
+            animation-name: slideInUp;
+        }
+
+        .image img, .image1 img {
+            width: 100%;
+            height: auto;
+        }
+
+        .image {
+            height: 72%;
+    top: 27%;
+    width: 46%;
+    left: 27%;
+    /* transform: translateX(-50%); */
+    position: relative;
+    }
+
+    .image1 {
+        height: 100%;
+    top: 25%;
+    width: 85%;
+    left: 0%;
+    /* transform: translateX(-50%); */
+    position: relative;
+    }
+
+        #child {
+            display: block;
+            height: 103%;
+            width: 172%;
+            position: absolute;
+            left: -73.6%;
+            bottom: -5%;
+        }
+
+        #headin {
+            height: 7%;
+            width: 67%;
+            position: absolute;
+            left: 22%;
+            bottom: 72%;
+        }  
+
+        #buttonContainer {
+            height: 58%;
+    width: 50%;
+    position: relative;
+    bottom: 21%;
+    left: 27%;
+    display: flex;
+    flex-direction: row;
+    gap: 18px;
+    animation-name: slideInRight;
+    animation-delay: 0.2s;
+    }
+    #logoTop {
+       
+        transform: rotate(-90deg);
+    width: 100%;
+    max-width: 38%;
+    height: auto;
+    position: absolute;
+    left: -14%;
+    /* transform: translateX(-50%); */
+   
+        }
+
+        #logoTop {
+            top: 39%;
+        }
+
+
+        .button {
+            opacity: 0;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            animation: fadeIn 1s ease-in-out forwards;
+        }
+
+        /* .button:hover {
+            content: url('./newimage/T1HOv.png');   
+        } */
+
+        .button img {
+            width: 100%;
+            height: auto;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Apply different animation delays to each button */
+        .button:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+
+        .button:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+
+        .button:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+        .button:nth-child(4) {
+            animation-delay: 0.8s;
+        } 
+
+        .image-text {
+            display: none;
+            position: fixed;
+            top: 70%;
+            left: 50%;
+            transform: translateX(-50%);
+            color: black;
+            font-size: 40px;
+            font-weight: bold;
+            z-index: 10;
+            animation-name: slideInRight;
+            z-index: 10;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                transform: translateX(-100%);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                transform: translateX(100%);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
+        @keyframes slideInUp {
+            from {
+                transform: translateY(100%);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        @media only screen and (max-width: 768px) {
+            .boxco {
+                grid-template-columns: 1fr;
+            }
+            .image img, .image1 img {
+    width: 89%;
+    height: auto;
+}
+            .image, .image1 {
+                width: 54%;
+    left: 151px;
+    margin-top: -35px;
+        }
+
+        .backButton {
+            width: 5.8%;
+        }
+        .backButton01 {
+            width: 5.8%;
+        }
+       
+        #buttonContainer {
+            bottom: 8%;
+            left: 48%;
+        }
+        #logoTop {
+            top: 21%;
+        }
+    }
+    
+    @media only screen and (max-width: 480px) {
+        #logoTop {
+            top: 21%;
+        }
+      
+        .image {
+    width: 62%;
+    left: 89px;
+    margin-top: 0;
+}
+.image1 {
+    width: 62%;
+    left: 89px;
+    margin-top: 0;
+}
+#buttonContainer {
+    left: 24%;
+        bottom: 23%;
+        }
+    }
+    
+   
+    </style>
+</head>
+<body>
+    <div class="boxco">
+        <img id="logoTop" src="./newimage/logo.png" alt="Top Logo">
+        <div class="backButton01" onclick="goBack()">
+            <img src="./newimage/newback.png" alt="Back Button">
+        </div>
+        <div class="backButton"  onclick="goToHome('welcome.html')">
+            <img src="./newimage/home.png" alt="Back Button">
+        </div>
+       
+        <div class="image">
+            <img src="./newimage/industrialengine/menu2/seven/Left_image01.png" alt="Left Image">
+            <div class="image-text">Some Text Over Image</div>
+        </div>
+
+        <div class="image1">
+            <img src="./newimage/industrialengine/menu2/seven/content01.png" alt="Right Image" id="first">
+<!--             
+            <img src="./images/headin.png" alt="Image 2" id="headin">
+            <img src="./images/key.png" alt="Image 2" id="child"> -->
+            
+        </div>
+        <div id="buttonContainer">
+           <!-- Corrected onclick attribute by passing 'this' (the clicked button) as an argument -->
+           <button class="button button1" onclick="changeImage('./newimage/industrialengine/menu2/seven/content01.png', this)">
+            <img class="0ne" id="img01" src="./newimage/industrialengine/menu2/seven/T1hov.png" alt="Button 1 Image">
+        </button>
+        <button class="button button2" onclick="changeImage('./newimage/industrialengine/menu2/seven/content01_1.png', this)">
+            <img class="0ne"  id="img02" src="./newimage/industrialengine/menu2/seven/T2.png" alt="Button 2 Image">
+        </button>
+        <button class="button button3" onclick="changeImage('./newimage/industrialengine/menu2/seven/content01_2.png', this)">
+            <img class="0ne" id="img03" src="./newimage/industrialengine/menu2/seven/T3.png" alt="Button 3 Image">
+        </button>
+        
+
+
+        </div>
+    </div>
+   <!-- ... Your existing HTML code ... -->
+
+<!-- ... Your existing HTML code ... -->
+
+<script>
+    // Define arrays for original and hover images
+    var originalImages = [
+        './newimage/industrialengine/menu2/seven/T1.png',
+        './newimage/industrialengine/menu2/seven/T2.png',
+        './newimage/industrialengine/menu2/seven/T3.png'
+    ];
+
+    var hoverImages = [
+        './newimage/industrialengine/menu2/seven/T1hov.png',
+        './newimage/industrialengine/menu2/seven/T2hov.png',
+        './newimage/industrialengine/menu2/seven/T3hov.png'
+    ];
+
+    function changeText(newText) {
+        var textElement = document.querySelector('.image-text');
+        textElement.innerText = newText;
+    }
+
+    function goBack() {
+        window.history.back();
+    }
+
+    function goToHome(page) {
+        window.location.href = page;
+    }
+
+    function changeImage(newSource, button) {
+        var imageElement = document.getElementById('first');
+        imageElement.src = newSource;
+
+        // If the clicked button is the second or third button, change the image of the first button
+        if (button.classList.contains('button2') || button.classList.contains('button3')) {
+            var firstButton = document.querySelector('.button1');
+            firstButton.classList.add('clicked');
+            var firstImage = document.getElementById('img01');
+            firstImage.src = originalImages[0];
+        }
+
+        // Remove 'clicked' class from all buttons
+        var buttons = document.querySelectorAll('.button');
+        buttons.forEach(function (btn) {
+            btn.classList.remove('clicked');
+        });
+
+        // Add 'clicked' class to the clicked button
+        button.classList.add('clicked');
+    }
+    function autoRedirect() {
+        // Set the timeout duration in milliseconds (e.g., 5000 for 5 seconds)
+        const timeoutDuration = 180000;
+
+        setTimeout(() => {
+            // Specify the default page to redirect to
+            goToPage('welcome.html');
+        }, timeoutDuration);
+    }
+
+    // Call the autoRedirect function when the page loads
+    window.onload = autoRedirect;
+</script>
+
+
+<!-- ... Your existing HTML code ... -->
+
+</body>
+</html>
+
+</body>
+</html>
