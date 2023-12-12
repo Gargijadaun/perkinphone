@@ -78,7 +78,19 @@
             transition: transform 0.3s;
         }
 
-      
+        .backButton01 {
+            width: 2.8%;
+            position: fixed;
+            top: 21px;
+            left: 35px;
+            animation-name: slideInLeft;
+        }
+
+        .backButton01 img {
+            width: 100%;
+            height: auto;
+            cursor: pointer;
+        }
 
         .imageLink:hover img {
             content: url('./newimage/mainmenu/Menu_01hov.png');
@@ -105,7 +117,7 @@
 
        @media only screen and (max-width: 900px) {
     #logoTop, #logoBottom {
-        max-width: 70%;
+        max-width: 81%;
     }
 
     #buttonContainer {
@@ -128,11 +140,23 @@
     
 }
        }
+       @media only screen and (max-width: 480px) {
+            .backButton01 {
+    width: 9.8%;
+    position: fixed;
+    top: 21px;
+    left: 19px;
+    animation-name: slideInLeft;
+}
+}
 
     </style>
 </head>
 <body>
     <div id="container">
+        <div class="backButton01" onclick="goBack()">
+            <img src="./newimage/newback.png" alt="Back Button">
+        </div>
         <img id="logoTop" src="./newimage/welcomelogo.png" alt="Top Logo">
         <div id="buttonContainer">
             <div class="imageLink" onclick="goToPage('page1.html')">
@@ -155,6 +179,9 @@
         function goToPage(page) {
             window.location.href = page;
         }
+        function goBack() {
+         window.history.back();
+     }
     </script>
 </body>
 </html>
