@@ -19,6 +19,8 @@
     background-size: cover, cover;
     text-align: center;
     overflow: hidden;
+    overflow-y: scroll; /* Enable vertical scrolling */
+    background-attachment: fixed;
         }
         .backButton {
             width: 2.8%;
@@ -140,11 +142,22 @@
         <div class="backButton01" onclick="goBack()">
             <img src="./newimage/newback.png" alt="Back Button">
         </div>
-        <div class="backButton"  onclick="goToHome('index.html')">
+        <div class="backButton"  onclick="goToHome('welcome.html')">
             <img src="./newimage/home.png" alt="Back Button">
         </div>
         <img id="logoTop" src="./newimage/welcomelogo.png" alt="Top Logo">
-       
+        <img src="./newimage/400series/image12000.png" alt="Image 2" style="      margin-top: 25%;
+        width: 87%;
+        max-width: 1149px;
+        margin-bottom: 20%;
+        margin-left: 0%;
+        ">
+        <img id="text2" src="./newimage/400series/image22000.png" alt="Image 2" style="      margin-left: 6%;
+        margin-top: -21%;
+        width: 87%;
+        max-width: 100%;
+        margin-bottom: -9%;
+    ">
         <img id="logoBottom" src="./newimage/homedowntext.png" alt="Bottom Logo">
     </div>
     <script>
@@ -167,7 +180,7 @@
 
         setTimeout(() => {
             // Specify the default page to redirect to
-            goToPage('index.html');
+            goToPage('welcome.html');
         }, timeoutDuration);
     }
 

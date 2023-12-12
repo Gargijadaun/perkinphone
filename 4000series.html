@@ -14,11 +14,13 @@
             justify-content: center;
             height: 100vh;
             overflow: hidden;
-            background-image: url('./newimage/mainmenu/4000bg.png');
+            background-image: url('./newimage/Frame_2000\ Series.jpg');
             background-repeat: no-repeat;
             background-size: cover;
             text-align: center;
             overflow: hidden;
+            overflow-y: scroll; /* Enable vertical scrolling */
+    background-attachment: fixed;
         }
         @keyframes buttonAnimation {
     0% {
@@ -156,20 +158,20 @@
     transform: translateX(-50%);
     top: 3%;
 }
-            #logoTop,
+            /* #logoTop,
             #logoBottom {
                 max-width: 80%;
-            }
+            } */
 
             #buttonContainer {
-                margin-top: 0%;
-                margin-right: 20px;
-                margin-left: 24px;
-                grid-template-columns: repeat(2, 1fr);
-                gap: 49px;
-                overflow-x: auto;
-                white-space: nowrap;
-                height: 57vh;
+                margin-top: -406%;
+    margin-right: 53px;
+    margin-left: 60px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 35px;
+    /* overflow-x: auto; */
+    white-space: nowrap;
+    height: 27vh;
             }
 
             .imageLink {
@@ -178,7 +180,7 @@
             }
 
             .imageLink img {
-                width: 100%;
+                width: 76%;
                 /* Adjust image width to fill the container */
             }
         }
@@ -190,9 +192,10 @@
         <div class="backButton01" onclick="goBack()">
             <img src="./newimage/newback.png" alt="Back Button">
         </div>
-        <div class="backButton"  onclick="goToHome('index.html')">
+        <div class="backButton"  onclick="goToHome('welcome.html')">
             <img src="./newimage/home.png" alt="Back Button">
         </div>
+      
         <img id="logoTop" src="./newimage/welcomelogo.png" alt="Top Logo">
         <div id="buttonContainer">
             <div class="imageLink" onclick="goToPage('4000menu1.html')">
@@ -209,6 +212,12 @@
                 <img id="img04" src="./newimage/400series/Menu_04.png" alt="Image 4">
             </div>
         </div>
+        <img src="./newimage/400series/text4000.png" alt="Image 2" style="      margin-top: 25%;
+        width: 87%;
+        max-width: 1149px;
+        margin-bottom: 20%;
+        margin-left: 5%;
+        ">
         <!-- <img id="logoBottom" src="./newimage/homedowntext.png" alt="Bottom Logo"> -->
     </div>
 
@@ -229,7 +238,7 @@
 
         setTimeout(() => {
             // Specify the default page to redirect to
-            goToPage('index.html');
+            goToPage('welcome.html');
         }, timeoutDuration);
     }
 

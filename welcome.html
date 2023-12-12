@@ -9,7 +9,7 @@
             margin: 0;
             padding: 0;
             background: url('./newimage/welcomepage.jpg') no-repeat center center fixed;
-            background-size: 100% 100%; /* Change from cover to 100% 100% */
+            background-size: 100% 100%;
             height: 100vh;
             position: relative;
             overflow: hidden;
@@ -18,13 +18,19 @@
         #container {
             width: 100%;
             min-height: 100vh; /* Ensure a minimum height for the container */
-            position: fixed;
+            position: relative;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
             text-align: center;
         }
-
+        img {
+            /* Common styles for all images */
+            max-width: 100%; /* Make images responsive */
+            height: auto;
+            display: block;
+            margin: 0 auto; /* Center images */
+        }
         @keyframes buttonAnimation {
             0% {
                 transform: scale(1);
@@ -56,12 +62,21 @@
             position: relative;
             z-index: 1;
         }
-
+        #button {
+            position: absolute;
+    top: 9%;
+    left: 11%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+        }
         #logoTop {
-            top: 10%;
-            width: 74%;
-            height: auto;
-            z-index: 0;
+            margin-left: 9%;
+    margin-top: 7%;
+    top: 10%;
+    width: 74%;
+    /* height: auto;
+    /* height: auto; */
+
         }
     </style>
     <title>Gmmco</title>
@@ -70,7 +85,21 @@
     <div id="container">
         
         <img id="logoTop" src="./newimage/welcomelogo.png" alt="Top Logo">
+        <img src="./newimage/firtstpage/image01.png" alt="Image 2" style="    width: 88%;
+        margin-left: 26px;
+        max-width: 1480px;
+        margin-top: 5%;">
         <button id="button" onclick="goToNextPage()"></button>
+       
+        <img src="./newimage/firtstpage/image02.png" alt="Image 2" style="    width: 89%;
+        margin-left: 14px;
+        max-width: 1500px;
+        margin-top: 4%;">
+        <img src="./newimage/firtstpage/image03.png" alt="Image 2" style="      width: 100%;
+        margin-left: 2px;
+        max-width: 1500px;
+        margin-top: 6%;">
+
     </div>
     <script>
         function goToNextPage() {

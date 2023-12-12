@@ -175,7 +175,7 @@ body {
 
             #logoTop {
                 width: 100%;
-                max-width: 48%;
+    max-width: 65%;
                 height: auto;
                 position: absolute;
                 left: 50%;
@@ -185,18 +185,17 @@ body {
 
             #logoTop,
             #logoBottom {
-                max-width: 80%;
+                max-width: 73%;
             }
 
             #buttonContainer {
-                margin-top: -10%;
-                margin-right: 20px;
-                margin-left: 24px;
-                grid-template-columns: repeat(2, 1fr);
-                gap: 49px;
-                overflow-x: auto;
-                white-space: nowrap;
-                height: 57vh;
+                margin-top: -311%;
+    margin-right: 20px;
+    margin-left: 24px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+    /* white-space: nowrap; */
+    height: 66vh;
             }
 
             .imageLink {
@@ -212,12 +211,26 @@ body {
 
 <body>
     <div id="container">
+       
         <div class="backButton01" onclick="goBack()">
             <img src="./newimage/newback.png" alt="Back Button">
         </div>
         <div class="backButton"  onclick="goToHome('welcome.html')">
             <img src="./newimage/home.png" alt="Back Button">
         </div>
+        
+        <img src="./newimage/400series/textimage.png" alt="Image 2" style="      margin-top: 25%;
+        width: 87%;
+        max-width: 1149px;
+        margin-bottom: 20%;
+        margin-left: 6%;
+        ">
+        <img id="text2" src="./newimage/400series/textimage01.png" alt="Image 2" style="      margin-left: 6%;
+        margin-top: -72%;
+        width: 87%;
+        max-width: 100%;
+        margin-bottom: -9%;
+        z-index: 1;">
         <img id="logoTop" src="./newimage/welcomelogo.png" alt="Top Logo">
         <div id="buttonContainer">
             <div class="imageLink" onclick="goToPage('2000series.html')">
@@ -229,7 +242,7 @@ body {
             <!-- Add two more image links as needed -->
            
         </div>
-        <!-- <img id="logoBottom" src="./newimage/partsimage/Together, we power ahead..png" alt="Bottom Logo"> -->
+        
     </div>
 
     <script>
