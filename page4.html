@@ -210,7 +210,16 @@ body {
     }
 }
 
-@media only screen and (max-width: 480px) {
+#logoTop {
+    width: 100%;
+    max-width: 67%;
+    height: auto;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 2%;
+            }
+@media only screen and (max-width: 600px) {
     #buttonContainer {
         margin-left: 6%;
     margin-top: 35%;
@@ -277,7 +286,7 @@ margin-bottom: -19%;
 
 <body>
     <div id="container">
-      
+        <img id="logoTop" src="./newimage/welcomelogo.png" alt="Top Logo">
         <button id="backButton01" onclick="goBack()"></button>
         <button id="backButton" onclick="goToHome('welcome.html')"></button>
         <div id="buttonContainer">
