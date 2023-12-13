@@ -22,6 +22,8 @@
             background-repeat: no-repeat;
             background-size: cover;
             text-align: center;
+            overflow-y: scroll; /* Enable vertical scrolling */
+    background-attachment: fixed;
         }
 
         #container {
@@ -336,6 +338,22 @@
     padding: 17px;
    
 }
+#logoTop,
+            #logoBottom {
+                max-width: 63%;
+            }
+            #logoTop {
+    width: 100%;
+    max-width: 48%;
+    height: auto;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 3%;
+}
+        }
+        @media only screen and (min-width: 600px) {
+           
 #logoTop,
             #logoBottom {
                 max-width: 63%;

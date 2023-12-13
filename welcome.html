@@ -65,7 +65,7 @@
             z-index: 1;
         }
         #button {
-            position: absolute;
+            position: fixed;
     top: 9%;
     left: 11%;
     transform: translate(-50%, -50%);
@@ -80,6 +80,44 @@
     /* height: auto; */
 
         }
+        @media only screen and (min-width: 600px) {
+            #button {
+            top: 35%;
+    left: 0%;
+    padding: 15px 30px;
+    margin-top: 166px;
+    width: 80%;
+    max-width: 300px;
+    height: 70px;
+    cursor: pointer;
+    background-color: transparent;
+            border: none;
+            background-image: url('./newimage/homebtn.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            animation: buttonAnimation 1s infinite;
+            position: relative;
+            z-index: 1;
+        }
+        #button {
+            position: absolute;
+    top: 19%;
+    left: 22%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+        }
+        #logoTop {
+            margin-left: 9%;
+    margin-top: 7%;
+    top: 10%;
+    width: 74%;
+    /* height: auto;
+    /* height: auto; */
+
+        }
+        }
+
     </style>
     <title>Gmmco</title>
 </head>

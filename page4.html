@@ -30,6 +30,8 @@ body {
     background-size: cover;
     text-align: center;
     overflow: hidden;
+    overflow-y: scroll; /* Enable vertical scrolling */
+    background-attachment: fixed;
 }
 
 #container {
@@ -176,7 +178,7 @@ body {
         margin-bottom: -95%;
         grid-area: buttons;
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         gap: 0%;
         justify-content: center;
         align-items: center;
@@ -209,6 +211,37 @@ body {
 }
 
 @media only screen and (max-width: 480px) {
+    #buttonContainer {
+        margin-left: 6%;
+    margin-top: 35%;
+    margin-bottom: -31%;
+    grid-template-columns: repeat(2, 1fr);
+    }
+
+    .imageLink {
+        margin-bottom: 100%;
+        width: 73%;
+    }
+    #imagesContainer {
+margin-bottom: -19%;
+            grid-row: 2; /* Adjust this value for smaller screens */
+            grid-template-columns: repeat(1, 1fr);
+        }
+        #img05 {
+    margin-left: 0%;
+    animation-delay: 0.5s;
+}
+
+#img06 {
+    margin-right: 0%;
+    animation-delay: 0.5s;
+}
+.imageBelowButtons img {
+    width: 71%;
+}
+}
+
+@media only screen and (min-width: 600px) {
     #buttonContainer {
         margin-left: 6%;
     margin-top: 35%;

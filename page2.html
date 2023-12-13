@@ -19,6 +19,8 @@
             background-size: cover;
             text-align: center;
             overflow: hidden;
+            overflow-y: scroll; /* Enable vertical scrolling */
+    background-attachment: fixed;
         }
         .backButton {
             width: 2.8%;
@@ -171,6 +173,50 @@
     overflow-x: auto;
     white-space: nowrap;
     height: 74vh;
+            }
+
+            .imageLink {
+                margin-right: 0;
+                /* Remove spacing between images */
+            }
+
+            .imageLink img {
+                width: 48%;
+                /* Adjust image width to fill the container */
+            }
+        }
+        @media only screen and (min-width: 600px) {
+            .backButton01 {
+    width: 7.8%;
+    position: fixed;
+    top: 21px;
+    left: 18px;
+   
+}
+.backButton {
+    width: 7.8%;
+    position: fixed;
+    top: 21px;
+    right: 18px;
+   
+}
+            #logoTop,
+            #logoBottom {
+                width: 75%;
+                max-width: 100%;
+                top: 2%;
+                left: 49%;
+            }
+
+            #buttonContainer {
+                margin-top: 48%;
+    margin-right: 20px;
+    margin-left: 24px;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 0px;
+    overflow-x: auto;
+    white-space: nowrap;
+    height: 91vh;
             }
 
             .imageLink {

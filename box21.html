@@ -15,6 +15,8 @@
             background-repeat: no-repeat;
             background-size: cover;
             overflow: hidden; /* Disable scrolling on the body */
+            overflow-y: scroll; /* Enable vertical scrolling */
+    background-attachment: fixed;
         }
         .boxco {
             display: grid;
@@ -255,7 +257,7 @@
     height: auto;
 }
             .image, .image1 {
-                width: 54%;
+                width: 47%;
     left: 151px;
     margin-top: -35px;
         }
@@ -314,8 +316,37 @@
     height: 33.46px;
 }
     }
-
+    @media only screen and (min-width: 600px) {
+        #buttonContainer {
+            top: 87%;
+    margin-bottom: 45%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    left: 16%;
+    width: 52%;
    
+        }
+        #iframeContainer {
+    margin-top: 13%;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.image1 {
+    height: 83%;
+    top: 27%;
+    width: 56%;
+    left: 22%;
+    /* transform: translateX(-50%); */
+    position: relative;
+}
+    .backButton01 {
+    width: 5.8%;
+    position: fixed;
+    top: 18px;
+    left: 36px;
+    animation-name: slideInLeft;
+}}
     </style>
 </head>
 <body>

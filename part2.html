@@ -145,7 +145,12 @@
             background-size: cover;
         }
         
-     
+        #headeing{
+    width: 23%;
+           max-width: 800px;
+           margin-top: 19%;
+           margin-left: 6%;
+}
         @media only screen and (max-width: 768px) {
 
 
@@ -176,20 +181,35 @@
             } */
 
             #backButton {
-                top: 18px;
+                top: 45px;
                 right: 11px;
                 cursor: pointer;
                 padding: 20px
             }
 
             #backButton01 {
-                top: 18px;
+                top: 45px;
                 left: 11px;
                 cursor: pointer;
                 padding: 20px
             }
         }
 
+        @media only screen and (min-width: 600px) {
+            #container {
+           
+            width: 85%;
+            height: 100%;
+        
+        }
+#headeing{
+    margin-bottom: 9%;
+    width: 23%;
+    max-width: 800px;
+    margin-top: 19%;
+    margin-left: 6%;
+}
+        }
         /* @media only screen and (max-width: 480px) {
             #buttonContainer {
                 margin-left: 15%;
@@ -215,10 +235,7 @@
         <button id="backButton01" onclick="goBack()"></button>
         <button id="backButton" onclick="goToHome('welcome.html')"></button>
         
-           <img src="./newimage/partsimage/heading2.png" alt="Image 1" style="       width: 23%;
-           max-width: 800px;
-           margin-top: 19%;
-           margin-left: 6%;">
+           <img id="headeing" src="./newimage/partsimage/heading2.png" alt="Image 1">
 
         <!-- Video 2 -->
         <video id="Three" autoplay loop muted >
